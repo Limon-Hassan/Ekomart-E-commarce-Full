@@ -326,7 +326,7 @@ const Checkout = () => {
               amount={summery.totalPrice * 100}
               onSuccess={() => {
                 localStorage.removeItem('cart');
-                window.location.href = '/success';
+                window.location.href = `/success/${orderID}`;
               }}
             ></PaymentStripe>
           ) : null}

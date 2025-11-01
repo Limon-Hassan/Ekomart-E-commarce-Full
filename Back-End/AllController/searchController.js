@@ -76,10 +76,6 @@ async function searchProducts(req, res, next) {
         .populate({ path: 'category', select: 'name discription image' });
     }
 
-    if (userId) {
-      await SearchHistory.create({ user: userId, query });
-    }
-
     getIO().emit('searchSuggestion', {
       query,
       suggestions: products

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Navber2 = () => {
   return (
     <>
-      <nav className="bg-[#22351E]">
+      <nav className="bg-[#22351E] mobile:hidden computer:block">
         <Container>
           <div className="flex items-center justify-between">
             <div className="relative w-[280px] inline-block group">
