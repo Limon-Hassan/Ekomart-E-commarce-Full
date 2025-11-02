@@ -11,12 +11,12 @@ import Container from '../Container';
 const Page6 = () => {
   return (
     <>
-      <section className="bg-[#dbe2e9]/30 pb-[50px] pt-[60px]">
+      <section className="bg-[#dbe2e9]/30 mobile:pb-[25px] computer:pb-[50px] mobile:pt-0 computer:pt-[60px]">
         <Container>
           <div>
-            <div className="bg-white rounded-[8px] p-[30px]">
+            <div className="bg-white rounded-[8px] mobile:p-[20px] computer:p-[30px]">
               <div className="flex items-center justify-between border-b border-black/20 pb-[30px]">
-                <h4 className="text-[30px] font-display leading-1.5 font-bold text-[#2C3C28] ">
+                <h4 className="mobile:text-[26px] computer:text-[30px] font-display leading-1.5 font-bold text-[#2C3C28] ">
                   Recently Added
                 </h4>
                 <span className="flex items-center gap-3">
@@ -40,13 +40,27 @@ const Page6 = () => {
                     nextEl: '.swiper-button-next-custom',
                     prevEl: '.swiper-button-prev-custom',
                   }}
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                      spaceBetween: 16,
+                    },
+                    768: {
+                      slidesPerView: 3,
+                      spaceBetween: 16,
+                    },
+                    1024: {
+                      slidesPerView: 6,
+                      spaceBetween: 16,
+                    },
+                  }}
                 >
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
-                          src="16.jpg"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
+                          src="fulkopi.jpg"
                           alt="jpg"
                         />
                       </div>
@@ -70,13 +84,13 @@ const Page6 = () => {
                         </button>
                       </div>
                     </div>
-                  </SwiperSlide>{' '}
+                  </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
-                          src="16.jpg"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
+                          src="fulkopi.jpg"
                           alt="jpg"
                         />
                       </div>
@@ -100,13 +114,13 @@ const Page6 = () => {
                         </button>
                       </div>
                     </div>
-                  </SwiperSlide>{' '}
+                  </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
-                          src="16.jpg"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
+                          src="fulkopi.jpg"
                           alt="jpg"
                         />
                       </div>
@@ -130,13 +144,13 @@ const Page6 = () => {
                         </button>
                       </div>
                     </div>
-                  </SwiperSlide>{' '}
+                  </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
-                          src="16.jpg"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
+                          src="fulkopi.jpg"
                           alt="jpg"
                         />
                       </div>
@@ -160,13 +174,13 @@ const Page6 = () => {
                         </button>
                       </div>
                     </div>
-                  </SwiperSlide>{' '}
+                  </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
-                          src="16.jpg"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
+                          src="fulkopi.jpg"
                           alt="jpg"
                         />
                       </div>
@@ -190,13 +204,13 @@ const Page6 = () => {
                         </button>
                       </div>
                     </div>
-                  </SwiperSlide>{' '}
+                  </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
-                          src="16.jpg"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
+                          src="fulkopi.jpg"
                           alt="jpg"
                         />
                       </div>
@@ -220,13 +234,13 @@ const Page6 = () => {
                         </button>
                       </div>
                     </div>
-                  </SwiperSlide>{' '}
+                  </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
-                          src="16.jpg"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
+                          src="fulkopi.jpg"
                           alt="jpg"
                         />
                       </div>
@@ -250,13 +264,13 @@ const Page6 = () => {
                         </button>
                       </div>
                     </div>
-                  </SwiperSlide>{' '}
+                  </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
-                          src="16.jpg"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
+                          src="fulkopi.jpg"
                           alt="jpg"
                         />
                       </div>
@@ -284,9 +298,9 @@ const Page6 = () => {
                 </Swiper>
               </div>
             </div>
-            <div className="bg-white rounded-[8px] p-[30px]">
+            <div className="bg-white rounded-[8px] mobile:p-[20px] computer:p-[30px] mobile:mt-[25px] computer:mt-0">
               <div className="flex items-center justify-between border-b border-black/20 pb-[30px]">
-                <h4 className="text-[30px] font-display leading-1.5 font-bold text-[#2C3C28] ">
+                <h4 className="mobile:text-[26px] computer:text-[30px] font-display leading-1.5 font-bold text-[#2C3C28] ">
                   Top Rated
                 </h4>
                 <span className="flex items-center gap-3">
@@ -310,12 +324,26 @@ const Page6 = () => {
                     nextEl: '.swiper-button-next-customs',
                     prevEl: '.swiper-button-prev-customs',
                   }}
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                      spaceBetween: 16,
+                    },
+                    768: {
+                      slidesPerView: 3,
+                      spaceBetween: 16,
+                    },
+                    1024: {
+                      slidesPerView: 6,
+                      spaceBetween: 16,
+                    },
+                  }}
                 >
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
                           src="16.jpg"
                           alt="jpg"
                         />
@@ -349,10 +377,10 @@ const Page6 = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
                           src="16.jpg"
                           alt="jpg"
                         />
@@ -386,10 +414,10 @@ const Page6 = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
                           src="16.jpg"
                           alt="jpg"
                         />
@@ -423,10 +451,10 @@ const Page6 = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
                           src="16.jpg"
                           alt="jpg"
                         />
@@ -460,10 +488,10 @@ const Page6 = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
                           src="16.jpg"
                           alt="jpg"
                         />
@@ -497,10 +525,10 @@ const Page6 = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
                           src="16.jpg"
                           alt="jpg"
                         />
@@ -534,10 +562,10 @@ const Page6 = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
                           src="16.jpg"
                           alt="jpg"
                         />
@@ -571,10 +599,10 @@ const Page6 = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="p-[15px] w-[250px] h-[405px] bg-[#F5F6F7] rounded-[6px]">
-                      <div className=" bg-white w-[220px] h-[190px] rounded-[6px]">
+                    <div className="p-[15px] mobile:w-full computer:w-[250px] h-[460px] bg-[#F5F6F7] rounded-[6px]">
+                      <div className=" bg-white w-full h-[250px] rounded-[6px]">
                         <img
-                          className="w-[100%] h-auto"
+                          className="w-[100%] h-[240px] rounded-[6px] object-cover"
                           src="16.jpg"
                           alt="jpg"
                         />

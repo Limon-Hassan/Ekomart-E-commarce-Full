@@ -6,7 +6,6 @@ import api from '../Api/axios';
 const OrderDetails = () => {
   let [order, setOrder] = useState([]);
 
-  
   useEffect(() => {
     async function fetchOrder() {
       try {
@@ -26,49 +25,49 @@ const OrderDetails = () => {
 
   return (
     <>
-      <section>
+      <section className="mobile:py-[50px] computer:py-0">
         <Container>
           <div>
             <h3 className="text-[30px] font-bold font-display leading-0.5 text-[#2C3C28] mb-[40px]">
               Your Orders
             </h3>
             <div className="border border-[#e2e2e2]">
-              <div className="flex gap-[200px] items-center border-b border-[#e2e2e2]">
-                <h5 className="uppercase  text-[16px] font-medium font-display text-[#2C3C28] p-[15px]">
+              <div className="flex mobile:gap-0 computer:gap-[200px] items-center border-b border-[#e2e2e2]">
+                <h5 className="uppercase mobile:text-[14px] computer:text-[16px] font-medium font-display text-[#2C3C28] p-[15px]">
                   Order ID
                 </h5>
-                <h5 className="uppercase  text-[16px] font-medium font-display text-[#2C3C28] p-[15px]">
+                <h5 className="uppercase mobile:text-[14px] computer:text-[16px] font-medium font-display text-[#2C3C28] p-[15px]">
                   Date
                 </h5>
-                <h5 className="uppercase  text-[16px] font-medium font-display text-[#2C3C28] p-[15px]">
+                <h5 className="uppercase mobile:text-[14px] computer:text-[16px] font-medium font-display text-[#2C3C28] p-[15px]">
                   Status
                 </h5>
-                <h5 className="uppercase  text-[16px] font-medium font-display text-[#2C3C28] p-[15px]">
+                <h5 className="uppercase mobile:text-[14px] computer:text-[16px] font-medium font-display text-[#2C3C28] p-[15px]">
                   Total
                 </h5>
-                <h5 className="uppercase  text-[16px] font-medium font-display text-[#2C3C28] p-[15px]">
+                <h5 className="uppercase mobile:text-[14px] computer:text-[16px] font-medium font-display text-[#2C3C28] p-[15px]">
                   Actions
                 </h5>
               </div>
               {order.map((item, index) => (
                 <div
                   index={index}
-                  className="flex gap-[140px] items-center"
+                  className="flex mobile:gap-0 computer:gap-[140px] items-center"
                 >
-                  <h5 className="text-[16px] font-normal font-display text-[#2C3C28] p-[15px]">
+                  <h5 className="mobile:text-[12px] computer:text-[16px] font-normal font-display text-[#2C3C28] p-[15px]">
                     {item.uniqueOrderID}
                   </h5>
-                  <h5 className="text-[16px] font-normal font-display text-[#2C3C28] p-[15px]">
+                  <h5 className="mobile:text-[12px] computer:text-[16px] font-normal font-display text-[#2C3C28] p-[15px]">
                     {format(new Date(item.createdAt), "MMMM d yyyy 'at' HH:mm")}
                   </h5>
-                  <h5 className="text-[16px] font-normal font-display text-[#2C3C28] p-[15px]">
+                  <h5 className="mobile:text-[12px] computer:text-[16px] font-normal font-display text-[#2C3C28] p-[15px]">
                     {item.delivery}
                   </h5>
-                  <h5 className="text-[16px] font-normal font-display text-[#2C3C28] p-[15px]">
+                  <h5 className="mobile:text-[12px] computer:text-[16px] font-normal font-display text-[#2C3C28] p-[15px]">
                     ${item.totalPrice} for
                     <span>{item.cartitem.length} items</span>
                   </h5>
-                  <h5 className="text-[16px] hover:underline  font-normal font-display text-[#2C3C28] p-[15px]">
+                  <h5 className="mobile:text-[12px] computer:text-[16px] hover:underline  font-normal font-display text-[#2C3C28] p-[15px]">
                     <a href="#">View</a>
                   </h5>
                 </div>

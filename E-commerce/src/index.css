@@ -11,3 +11,16 @@
   --breakpoint-mobile: 20rem;
   --breakpoint-computer: 100rem;
 }
+
+.truncate-html {
+  display: -webkit-box;
+  --webkit-line-clamp: 1;
+  --webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.my-line-through {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #424242;
+}

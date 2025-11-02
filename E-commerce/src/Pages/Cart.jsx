@@ -172,11 +172,11 @@ const Cart = () => {
 
   return (
     <>
-      <section className="bg-[#F3F4F6] py-[100px]">
+      <section className="bg-[#F3F4F6] mobile:py-[50px] computer:py-[100px]">
         <Container>
-          <div className="flex gap-[50px]">
-            <div className="w-[75%]">
-              <div className="bg-[#FFF] border border-[#e2e2e2] p-[40px] rounded-[6px] mb-[20px]">
+          <div className="flex flex-wrap gap-[50px]">
+            <div className="mobile:w-full computer:w-[70%]">
+              <div className="bg-[#FFF] border border-[#e2e2e2] mobile:p-[15px] computer:p-[40px] rounded-[6px] mb-[20px]">
                 <h4 className="text-[16px] font-display font-medium text-[#74787C] leading-6">
                   If you want to get Shipping cost free then purchase minimum
                   $5000 and get discounts when you're total quantity would be 5
@@ -184,7 +184,7 @@ const Cart = () => {
               </div>
 
               <div className="bg-[#FFF] border border-[#e2e2e2] py-[20px] px-[10px] rounded-[6px] ">
-                <div className="flex items-center justify-between py-[15px] px-[20px] border-b border-[#e2e2e2]">
+                <div className="mobile:hidden computer:flex items-center justify-between py-[15px] px-[20px] border-b border-[#e2e2e2]">
                   <h5 className="text-[16px] font-display font-bold text-[#2C3C28]">
                     Products
                   </h5>
@@ -208,82 +208,156 @@ const Cart = () => {
                     </div>
                   ) : (
                     cartProduct.map((item, indx) => (
-                      <div
-                        key={indx}
-                        className="flex items-center gap-[140px]  py-[30px] px-[15px] border-b border-[#e2e2e2]"
-                      >
-                        <div className="flex items-center gap-[30px]">
-                          <span
-                            onClick={() => clearCart('single', item.CartitemID)}
-                            className="bg-red-500 w-[40px] h-[40px] rounded-full flex justify-center items-center text-white cursor-pointer"
-                          >
-                            <i class="fa-solid fa-xmark"></i>
-                          </span>
-                          <img
-                            className="max-w-[70px] h-auto"
-                            src={item.product.photo?.[0] || '01.jpg'}
-                            alt="product"
-                          />
-                          <h4 className="text-[16px] font-display font-bold text-[#2C3C28] truncate w-[250px]">
-                            {item.product.name}
-                          </h4>
-                        </div>
-                        <div className="flex items-center gap-[400px]">
-                          <span className="text-[18px] font-bold text-[#2C3C28] ">
-                            ${item.product.price}
-                          </span>
-                          <div className="flex items-center bg-white p-3 rounded-[4px] gap-3 ">
-                            <div className="mr-[12px]">
-                              <h5 className="text-[14px] font-display font-bold">
-                                {item.quantity}
-                              </h5>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <button
-                                onClick={() =>
-                                  handleIncrement('Increment', item.CartitemID)
-                                }
-                                className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500"
-                              >
-                                <i class="fa-solid fa-plus-large"></i>
-                              </button>
-                              <button
-                                onClick={() =>
-                                  handleIncrement('Decrement', item.CartitemID)
-                                }
-                                className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500"
-                              >
-                                <i class="fa-solid fa-minus"></i>
-                              </button>
+                      <>
+                        <div
+                          key={indx}
+                          className="computer:flex mobile:hidden items-center gap-[118px] py-[30px] px-[15px] border-b border-[#e2e2e2]"
+                        >
+                          <div className="flex items-center gap-[25px]">
+                            <span
+                              onClick={() =>
+                                clearCart('single', item.CartitemID)
+                              }
+                              className="bg-red-500 w-[40px] h-[40px] rounded-full flex justify-center items-center text-white cursor-pointer"
+                            >
+                              <i class="fa-solid fa-xmark"></i>
+                            </span>
+                            <img
+                              className="max-w-[70px] h-auto"
+                              src={item.product.photo?.[0] || '01.jpg'}
+                              alt="product"
+                            />
+                            <h4 className="text-[16px] font-display font-bold text-[#2C3C28] truncate w-[250px]">
+                              {item.product.name}
+                            </h4>
+                          </div>
+                          <div className="flex items-center gap-[400px]">
+                            <span className="text-[18px] font-bold text-[#2C3C28] ">
+                              ${item.product.price}
+                            </span>
+                            <div className="flex items-center bg-white p-3 rounded-[4px] gap-3 ">
+                              <div className="mr-[12px]">
+                                <h5 className="text-[14px] font-display font-bold">
+                                  {item.quantity}
+                                </h5>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <button
+                                  onClick={() =>
+                                    handleIncrement(
+                                      'Increment',
+                                      item.CartitemID
+                                    )
+                                  }
+                                  className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500"
+                                >
+                                  <i class="fa-solid fa-plus-large"></i>
+                                </button>
+                                <button
+                                  onClick={() =>
+                                    handleIncrement(
+                                      'Decrement',
+                                      item.CartitemID
+                                    )
+                                  }
+                                  className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500"
+                                >
+                                  <i class="fa-solid fa-minus"></i>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                        <div
+                          key={indx}
+                          className="mobile:flex gap-[20px] border-b border-[#e2e2e2] py-5 computer:hidden"
+                        >
+                          <div className="w-[120px] h-[100px] relative">
+                            <span class="absolute top-0 left-0 flex h-6 w-6 items-center justify-center rounded-full border bg-white text-sm font-medium text-gray-500 shadow sm:-top-2 sm:-right-2">
+                              {item.quantity}
+                            </span>
+                            <img
+                              className="w-full h-full rounded-md"
+                              src={item.product.photo?.[0] || '01.jpg'}
+                              alt="lengquage"
+                            />
+                          </div>
+                          <div>
+                            <h4 className="wrap-break-word text-[16px] font-display font-bold text-[#2C3C28] line-clamp-2 text-ellipsis overflow-hidden h-[50px] w-[240px]">
+                              {item.product.name}
+                            </h4>
+                            <h4 className="text-[16px] font-display font-bold text-[#2C3C28] h-[22px]">
+                              product brand
+                            </h4>
+                            <div className="flex items-center justify-between h-[28px]">
+                              <h4 className="text-[18px] font-bold text-[#2C3C28] ">
+                                ${item.product.price}
+                              </h4>
+                              <div className="flex items-center gap-2">
+                                <button
+                                  onClick={() =>
+                                    handleIncrement(
+                                      'Increment',
+                                      item.CartitemID
+                                    )
+                                  }
+                                  className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500"
+                                >
+                                  <i class="fa-solid fa-plus-large"></i>
+                                </button>
+                                <button
+                                  onClick={() =>
+                                    handleIncrement(
+                                      'Decrement',
+                                      item.CartitemID
+                                    )
+                                  }
+                                  className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500"
+                                >
+                                  <i class="fa-solid fa-minus"></i>
+                                </button>
+                              </div>
+                              <i
+                                onClick={() =>
+                                  clearCart('single', item.CartitemID)
+                                }
+                                class="fa-solid fa-xmark text-[26px] text-black"
+                              ></i>
+                            </div>
+                          </div>
+                        </div>
+                      </>
                     ))
                   )}
                 </div>
 
-                <div className="py-[30px] px-[30px] flex items-center justify-between">
-                  <div className="flex items-center gap-[20px]">
+                <div className="mobile:py-[20px] mobile:px-[10px] computer:py-[30px] computer:px-[30px] computer:flex mobile:flex-none items-center justify-between">
+                  <div className=" mobile:flex-none computer:flex items-center gap-[20px]">
                     <input
-                      className="h-[50px] font-medium text-[#6E777D] bg-[#F3F4F6] rounded-[6px] w-[290px] p-[15px]  focus:outline-[#629D23]"
+                      className="h-[50px] font-medium text-[#6E777D] bg-[#F3F4F6] rounded-[6px] mobile:w-full computer:w-[290px] p-[15px]  focus:outline-[#629D23]"
                       type="text"
                       placeholder="Apply Coupon..."
                     />
-                    <button className="text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] px-[28px] py-[10px] rounded-[6px] cursor-pointer">
+                    <button className="mobile:hidden computer:block text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] px-[28px] py-[10px] rounded-[6px] cursor-pointer">
                       Apply Coupon
                     </button>
                   </div>
-                  <button
-                    onClick={() => clearCart('clear')}
-                    className="text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] px-[28px] py-[10px] rounded-[6px] cursor-pointer"
-                  >
-                    Clear All
-                  </button>
+                  <div className="mobile:flex mobile:items-center mobile:justify-between computer:flex-none mobile:mt-5 computer:mt-0">
+                    <button className="computer:hidden mobile:block text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] px-[28px] py-[10px] rounded-[6px] cursor-pointer">
+                      Apply Coupon
+                    </button>
+
+                    <button
+                      onClick={() => clearCart('clear')}
+                      className="text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] px-[28px] py-[10px] rounded-[6px] cursor-pointer"
+                    >
+                      Clear All Carts
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="w-[25%]">
+            <div className="mobile:w-full computer:w-[25%]">
               <div className="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
                 <p className="text-xl font-Poppipns_FONT font-semibold text-gray-900">
                   Order summary

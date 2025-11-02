@@ -12,6 +12,17 @@ const Account = () => {
     e: false,
   });
   let handleActive = type => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      if (type === 'a') {
+        window.location.href = '/orderDetails';
+        return;
+      }
+      if (type === 'b') {
+        window.location.href = '/trackOrder';
+        return;
+      }
+    }
     setActive({
       a: false,
       b: false,
@@ -23,10 +34,10 @@ const Account = () => {
   };
   return (
     <>
-      <section className="py-[200px]">
+      <section className="mobile:py-[50px] computer:py-[200px]">
         <Container>
           <div className="flex justify-between gap-10">
-            <div className="w-[25%]">
+            <div className="mobile:w-full computer:w-[25%]">
               <ul>
                 <li
                   onClick={() => handleActive('a')}
@@ -95,7 +106,8 @@ const Account = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-[75%]">
+
+            <div className="mobile:w-0 mobile:hidden computer:block computer:w-[75%]">
               {active.a && <OrderDetails />}
               {active.b && <TrackOrder />}
             </div>

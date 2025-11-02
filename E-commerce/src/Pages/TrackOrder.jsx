@@ -4,17 +4,17 @@ import Container from '../Container';
 const TrackOrder = () => {
   return (
     <>
-      <section>
+      <section className='mobile:py-[50px] computer:py-0'>
         <Container>
           <div>
             <h3 className="text-[30px] font-bold font-display leading-0.5 text-[#2C3C28] mb-[40px]">
               Orders tracking
             </h3>
-            <p className="text-[16px] font-normal font-display text-[#6E777D] leading-3 mb-[40px]">
+            <p className="text-[16px] mobile:w-auto computer:w-[930px] font-normal font-display text-[#6E777D] mobile:leading-5 leading-3 mb-[40px]">
               To keep up with the status of your order, kindly input your
               OrderID in the designated box below and click the "Track" button.
             </p>
-            <div className="w-[930px]">
+            <div className="mobile:w-auto computer:w-[930px]">
               <label className="text-[16px] font-medium font-display text-[#6E777D] ">
                 Order Id
               </label>
@@ -24,7 +24,7 @@ const TrackOrder = () => {
                 type="text"
               />
             </div>
-            <div className="w-[930px]">
+            <div className="mobile:w-auto computer:w-[930px]">
               <label className="text-[16px] font-medium font-display text-[#6E777D] ">
                 Billing Email
               </label>

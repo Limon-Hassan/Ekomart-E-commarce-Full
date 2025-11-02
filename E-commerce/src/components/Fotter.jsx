@@ -4,10 +4,11 @@ import Container from '../Container';
 const Fotter = () => {
   return (
     <>
-      <section className="bg-[#F3F4F6]  pt-[80px]">
+      <section className="relative bg-[#F3F4F6] mobile:pt-[40px] computer:pt-[80px]">
+        <div className="relative w-full my-10 border-t-2 border-dashed border-black/30 after:content-['Finishing'] after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-[#F3F4F6] after:px-4 after:text-[#000] after:font-semibold"></div>
         <Container>
-          <div className="flex items-center justify-between border-b border-[#6E777D]/30">
-            <div className="py-[60px]">
+          <div className="computer:flex computer:flex-row mobile:flex mobile:flex-wrap items-center justify-between border-b border-[#6E777D]/30">
+            <div className="mobile:py-[25px] computer:py-[60px]">
               <h3 className="text-[20px] font-display font-bold text-[#000] leading-[54px] mb-[20px]">
                 About Company
               </h3>
@@ -44,7 +45,7 @@ const Fotter = () => {
                 </span>
               </p>
             </div>
-            <div className="py-[60px]">
+            <div className="mobile:py-[25px] computer:py-[60px]">
               <h3 className="text-[20px] font-display font-bold text-[#000] leading-[54px] mb-[20px]">
                 Our Stores
               </h3>
@@ -82,7 +83,7 @@ const Fotter = () => {
                 </a>
               </div>
             </div>
-            <div className="py-[60px]">
+            <div className="mobile:py-[25px] computer:py-[60px]">
               <h3 className="text-[20px] font-display font-bold text-[#000] leading-[54px] mb-[20px]">
                 Shop Categories
               </h3>
@@ -120,7 +121,7 @@ const Fotter = () => {
                 </a>
               </div>
             </div>
-            <div className="py-[60px]">
+            <div className="mobile:py-[25px] computer:py-[60px]">
               <h3 className="text-[20px] font-display font-bold text-[#000] leading-[54px] mb-[20px]">
                 Useful Links
               </h3>
@@ -158,11 +159,11 @@ const Fotter = () => {
                 </a>
               </div>
             </div>
-            <div className="py-[60px]">
+            <div className="mobile:py-[25px] computer:py-[60px]">
               <h3 className="text-[20px] font-display font-bold text-[#000] leading-[54px] mb-[20px]">
                 Our Newsletter
               </h3>
-              <p className="mb-[20px] text-[16px] font-display font-normal  w-[352px] text-[#6E777D]">
+              <p className="mb-[20px] text-[16px] font-display font-normal mobile:w-auto computer:w-[352px] text-[#6E777D]">
                 Subscribe to the mailing list to receive updates one the new
                 arrivals and other discounts
               </p>
@@ -184,7 +185,7 @@ const Fotter = () => {
               </p>
             </div>
           </div>
-          <div className="flex justify-between items-center py-[30px]">
+          <div className="computer:flex computer:flex-row mobile:flex mobile:flex-wrap justify-between items-center py-[30px]">
             <div className="flex items-center gap-[20px] ">
               <div className="text-[16px] font-normal text-[#6E777D] font-display">
                 Follow Us:

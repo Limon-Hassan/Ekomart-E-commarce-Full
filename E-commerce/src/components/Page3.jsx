@@ -98,14 +98,14 @@ const Page3 = () => {
 
   return (
     <>
-      <section className="bg-[#dbe2e9]/30 pt-[60px]">
+      <section className="bg-[#dbe2e9]/30 mobile:pt-0 computer:pt-[60px]">
         <Container>
-          <div className="bg-white rounded-[8px] pt-[30px] p-[15px]  border border-[#e2e2e2]">
-            <div className="flex items-center justify-between pb-[30px] border-b border-[#e2e2e2]">
-              <h2 className="text-[30px] font-display font-bold leading-1.5 text-[#2C3C28]">
+          <div className="bg-white rounded-[8px] mobile:pt-[20px] computer:pt-[30px] p-[15px]  border border-[#e2e2e2]">
+            <div className="computer:flex mobile:flex mobile:flex-wrap items-center justify-between pb-[30px] border-b border-[#e2e2e2]">
+              <h2 className="mobile:text-[22px] computer:text-[30px] font-display font-bold leading-1.5 text-[#2C3C28]">
                 Weekly Best Selling Groceries
               </h2>
-              <div className="flex items-center gap-4">
+              <div className="computer:flex mobile:flex mobile:flex-wrap items-center gap-4 computer:mt-0 mobile:mt-[45px]">
                 <button className="text-[16px] font-display font-semibold text-[#FFF] py-[8px] px-[27px] rounded-[100px]   bg-[#629D23]">
                   Frozen Foods
                 </button>
@@ -134,21 +134,21 @@ const Page3 = () => {
                   {products?.map(pro => (
                     <div
                       key={pro._id}
-                      className=" p-[15px] w-[250px] h-[386px] bg-[#F5F6F7] rounded-[6px] "
+                      className=" p-[15px] mobile:w-[100%] mobile:h-[430px] mobile:mx-auto computer:w-[250px] computer:mx-0 computer:h-[386px] bg-[#F5F6F7] rounded-[6px] "
                     >
                       <div
                         onClick={() => handleProductItem(pro._id)}
-                        className=" relative bg-white w-[220px] h-[190px] rounded-[6px] overflow-hidden"
+                        className=" relative bg-white mobile:w-auto mobile:h-[50%] computer:w-[220px] flex items-center justify-center computer:h-[190px] rounded-[6px] overflow-hidden"
                       >
                         <img
-                          className="w-[100%] h-auto hover:scale-120 ease-in-out duration-300  cursor-pointer"
+                          className="w-[65%] h-auto hover:scale-120 ease-in-out duration-300 rounded-[8px] cursor-pointer"
                           src={pro.photo || 'oil.jpg'}
                           alt="jpg"
                         />
                         <div className="Bedge absolute top-0 left-[40px]  w-[35px] ">
                           <div
                             className="bg-yellow-400 text-green-900 font-display font-bold text-center text-[12px] h-[55px] flex items-center justify-center
-                      [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,0_63%)]"
+                            [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,0_63%)]"
                           >
                             25% <br></br>Off
                           </div>
@@ -156,14 +156,14 @@ const Page3 = () => {
                       </div>
                       <h4
                         onClick={() => handleProductItem(pro._id)}
-                        className="text-[16px] font-display font-bold mt-[10px] hover:text-[#629D23] transition-all ease-in-out duration-300 w-[220px] cursor-pointer "
+                        className="text-[16px] font-display mobile:h-[55px] computer:h-auto font-bold mt-[10px] hover:text-[#629D23] transition-all ease-in-out duration-300 w-[220px] cursor-pointer "
                       >
                         {pro.name}
                       </h4>
-                      <p className="text-[14px] font-display font-semibold text-black/30 mt-[10px]">
+                      <p className="text-[14px] mobile:h-[22px] computer:h-auto font-display font-semibold text-black/30 mt-[10px]">
                         {pro.stock} Pack
                       </p>
-                      <div className="flex items-center gap-1.5 mt-1">
+                      <div className="flex mobile:h-[55px] computer:h-auto items-center gap-1.5 mt-1">
                         <h3 className="text-[20px] font-display font-bold text-[#DC2626]">
                           ${pro.price}
                         </h3>

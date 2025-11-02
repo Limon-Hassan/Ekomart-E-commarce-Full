@@ -105,6 +105,7 @@ import Checkout from './Pages/Checkout';
 import SentOTP from './Pages/SentOTP';
 import GoogleRedirect from './Pages/GoogleRedirect';
 import PaymentSuccessfull from './Pages/PaymentSuccessfull';
+import TrackOrder from './Pages/TrackOrder';
 
 function Layout() {
   const location = useLocation();
@@ -138,6 +139,7 @@ function Layout() {
         />
         <Route path="/productDetails/:id/:slug" element={<ProductDetails />} />
         <Route path="/orderDetails" element={<OrderDetails />} />
+        <Route path="/trackOrder" element={<TrackOrder />} />
         <Route path="/success/:slug" element={<PaymentSuccessfull />} />
       </Routes>
 

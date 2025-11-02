@@ -329,14 +329,18 @@ const Navber = () => {
           </div>
         </Container>
         {active && (
-          <div className="fixed top-0 left-0 w-full h-full bg-black opacity-80 z-40"></div>
+          <>
+            <div className="fixed top-0 left-0 w-full h-full bg-black opacity-80 z-40"></div>
+
+            <h3
+              onClick={() => setActive(false)}
+              className="fixed top-[20px] computer:hidden right-[46px] text-white text-3xl z-[60]"
+            >
+              <i class="fa-solid fa-xmark "></i>
+            </h3>
+          </>
         )}
-        <h3
-          onClick={() => setActive(false)}
-          className="fixed top-[20px] computer:hidden right-[46px] text-white text-3xl z-[60]"
-        >
-          <i class="fa-solid fa-xmark "></i>
-        </h3>
+
         <div
           id="mobile-menu"
           className={`fixed top-0 left-0 z-50 w-[300px] h-screen bg-white transform origin-left transition-all duration-500 ease-in-out overflow-y-auto overflow-x-hidden ${
