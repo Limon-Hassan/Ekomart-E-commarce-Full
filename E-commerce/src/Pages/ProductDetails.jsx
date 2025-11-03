@@ -116,42 +116,42 @@ const ProductDetails = () => {
   };
   return (
     <>
-      <section className="py-[100px] bg-[#F3F4F6]">
+      <section className="mobile:py-[50px] computer:py-[100px] bg-[#F3F4F6]">
         <Container>
-          <div className="flex gap-[50px] bg-white rounded-[6px] p-[60px]">
+          <div className="mobile:flex mobile:flex-wrap computer:flex gap-[50px] bg-white rounded-[6px] mobile:p-[15px] computer:p-[60px]">
             {product && (
               <>
-                <div className="image  ">
-                  <div className="w-[480px] h-auto flex justify-center items-center mx-auto rounded-[6px] mb-[30px] border-2 border-[#f1f1f1]">
+                <div className="image computer:w-auto computer:h-auto mobile:w-full mobile:h-full">
+                  <div className="mobile:w-auto computer:w-[480px] h-auto flex justify-center items-center mx-auto rounded-[6px] mb-[30px] border-2 border-[#f1f1f1]">
                     <img
                       className="w-full h-full"
                       src={product.photo}
                       alt="product"
                     />
                   </div>
-                  <div className="flex items-center gap-6">
-                    <div className="cursor-pointer  w-[100px] p-[20px] border border-[#f1f1f1] rounded-[6px]">
+                  <div className="flex items-center mobile:gap-0 computer:gap-6">
+                    <div className="cursor-pointer  w-[100px] mobile:p-[8px] computer:p-[20px] border border-[#f1f1f1] rounded-[6px]">
                       <img
                         className="w-full h-auto"
                         src={product.photo}
                         alt=""
                       />
                     </div>
-                    <div className="cursor-pointer  w-[100px] p-[20px] border border-[#f1f1f1] rounded-[6px]">
+                    <div className="cursor-pointer  w-[100px] mobile:p-[8px] computer:p-[20px] border border-[#f1f1f1] rounded-[6px]">
                       <img
                         className="w-full h-auto"
                         src={product.photo}
                         alt=""
                       />
                     </div>
-                    <div className="cursor-pointer  w-[100px] p-[20px] border border-[#f1f1f1] rounded-[6px]">
+                    <div className="cursor-pointer  w-[100px] mobile:p-[8px] computer:p-[20px] border border-[#f1f1f1] rounded-[6px]">
                       <img
                         className="w-full h-auto"
                         src={product.photo}
                         alt=""
                       />
                     </div>
-                    <div className="cursor-pointer  w-[100px] p-[20px] border border-[#f1f1f1] rounded-[6px]">
+                    <div className="cursor-pointer  w-[100px] mobile:p-[8px] computer:p-[20px] border border-[#f1f1f1] rounded-[6px]">
                       <img
                         className="w-full h-auto"
                         src={product.photo}
@@ -226,35 +226,35 @@ const ProductDetails = () => {
             )}
           </div>
 
-          <div className="bottom_part bg-white rounded-[6px] p-[60px]">
-            <div className="flex items-center gap-4 border-b border-[#dee2e6] pb-[30px]">
+          <div className="bottom_part bg-white rounded-[6px] mobile:p-[15px] computer:p-[60px]">
+            <div className="flex items-center mobile:gap-[8px] computer:gap-4 border-b border-[#dee2e6] pb-[30px]">
               <button
                 onClick={() => HandleActive('a')}
-                className={`text-[16px] font-display font-bold ${
+                className={` computer:text-[16px] mobile:text-[12px] font-display font-bold ${
                   buttonActive.a
                     ? 'bg-[#629D23] text-white'
                     : 'bg-none text-[#495057]'
-                } border border-[#dee2e6] hover:bg-[#629D23] transition-all ease-in-out duration-300 rounded-[6px] py-[13px] px-[26px] cursor-pointer hover:text-white`}
+                } border border-[#dee2e6] hover:bg-[#629D23] transition-all ease-in-out duration-300 rounded-[6px] computer:w-[200px] computer:h-[60px] mobile:w-[115px] mobile:h-[50px] cursor-pointer hover:text-white`}
               >
                 Product Details
               </button>
               <button
                 onClick={() => HandleActive('b')}
-                className={`text-[16px] font-display font-bold ${
+                className={` computer:text-[16px] mobile:text-[12px] font-display font-bold ${
                   buttonActive.b
                     ? 'bg-[#629D23] text-white'
                     : 'bg-none text-[#495057]'
-                } border border-[#dee2e6] hover:bg-[#629D23] transition-all ease-in-out duration-300 rounded-[6px] py-[13px] px-[26px] cursor-pointer  hover:text-white`}
+                } border border-[#dee2e6] hover:bg-[#629D23] transition-all ease-in-out duration-300 rounded-[6px] computer:w-[200px] computer:h-[60px] mobile:w-[115px] mobile:h-[50px] cursor-pointer  hover:text-white`}
               >
                 Additional Information
               </button>
               <button
                 onClick={() => HandleActive('c')}
-                className={`text-[16px] font-display font-bold ${
+                className={` computer:text-[16px] mobile:text-[12px] font-display font-bold ${
                   buttonActive.c
                     ? 'bg-[#629D23] text-white'
                     : 'bg-none text-[#495057]'
-                } border border-[#dee2e6] hover:bg-[#629D23] transition-all ease-in-out duration-300 rounded-[6px] py-[13px] px-[26px] cursor-pointer hover:text-white`}
+                } border border-[#dee2e6] hover:bg-[#629D23] transition-all ease-in-out duration-300 rounded-[6px] computer:w-[200px] computer:h-[60px] mobile:w-[115px] mobile:h-[50px] cursor-pointer hover:text-white`}
               >
                 Customer Reviews ({product?.Totoalreviews || 0})
               </button>
@@ -267,7 +267,7 @@ const ProductDetails = () => {
           </div>
 
           <div>
-            <div className="bg-white rounded-[8px] p-[30px] ">
+            <div className="bg-white rounded-[8px] mobile:p-[10px] computer:p-[30px] ">
               <div className="flex items-center justify-between border-b border-black/20 pb-[30px]">
                 <h4 className="text-[30px] font-display leading-1.5 font-bold text-[#2C3C28] ">
                   Related Product
@@ -297,16 +297,30 @@ const ProductDetails = () => {
                     nextEl: '.swiper-button-next-custom',
                     prevEl: '.swiper-button-prev-custom',
                   }}
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                      spaceBetween: 16,
+                    },
+                    768: {
+                      slidesPerView: 3,
+                      spaceBetween: 16,
+                    },
+                    1024: {
+                      slidesPerView: 6,
+                      spaceBetween: 16,
+                    },
+                  }}
                 >
                   {relatedProducts.map((item, index) => (
                     <SwiperSlide
                       onClick={() => handleProductItem(item._id)}
                       key={index._id}
                     >
-                      <div className=" p-[15px] w-[250px] h-[386px] bg-[#F5F6F7] rounded-[6px] ">
-                        <div className=" relative bg-white w-[220px] h-[190px] rounded-[6px] overflow-hidden">
+                      <div className=" p-[15px] mobile:w-[100%] mobile:h-[430px] mobile:mx-auto computer:w-[250px] computer:mx-0 computer:h-[386px] bg-[#F5F6F7] rounded-[6px] ">
+                        <div className=" relative bg-white mobile:w-auto mobile:h-[50%] computer:w-[220px] flex items-center justify-center computer:h-[190px] rounded-[6px] overflow-hidden">
                           <img
-                            className="w-[100%] h-auto hover:scale-120 ease-in-out duration-300  cursor-pointer"
+                            className="w-[65%] h-auto hover:scale-120 ease-in-out duration-300 rounded-[8px] cursor-pointer"
                             src={item.photo}
                             alt="jpg"
                           />
@@ -319,13 +333,13 @@ const ProductDetails = () => {
                             </div>
                           </div>
                         </div>
-                        <h4 className="text-[16px] font-display font-bold mt-[10px] hover:text-[#629D23] transition-all ease-in-out duration-300 w-[220px] cursor-pointer ">
+                        <h4 className="text-[16px] font-display mobile:h-[55px] computer:h-auto font-bold mt-[10px] hover:text-[#629D23] transition-all ease-in-out duration-300 w-[220px] cursor-pointer ">
                           {item.name}
                         </h4>
-                        <p className="text-[14px] font-display font-semibold text-black/30 mt-[10px]">
+                        <p className="text-[14px] mobile:h-[22px] computer:h-auto font-display font-semibold text-black/30 mt-[10px]">
                           {item.stock} Pack
                         </p>
-                        <div className="flex items-center gap-1.5 mt-1">
+                        <div className="flex mobile:h-[55px] computer:h-auto items-center gap-1.5 mt-1">
                           <h3 className="text-[20px] font-display font-bold text-[#DC2626]">
                             ${item.price}
                           </h3>
@@ -352,7 +366,7 @@ const ProductDetails = () => {
                           <div>
                             <button
                               onClick={() => handleCartItem(item)}
-                              className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white transition-all ease-in-out duration-300"
+                              className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white cursor-pointer transition-all ease-in-out duration-300"
                             >
                               ADD
                               <span>

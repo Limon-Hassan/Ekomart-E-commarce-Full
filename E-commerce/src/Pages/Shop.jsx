@@ -24,6 +24,24 @@ const Shop = () => {
   let [shopProducts, setShopProducts] = useState([]);
   let [searchedProducts, setSearchedProducts] = useState(location.state || []);
   const [loading, setLoading] = useState(false);
+  let [active, setActive] = useState({
+    a: false,
+    b: false,
+    c: false,
+    d: false,
+    e: false,
+  });
+
+  let handleActive = type => {
+    setActive({
+      a: false,
+      b: false,
+      c: false,
+      d: false,
+      e: false,
+      [type]: true,
+    });
+  };
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -43,6 +61,7 @@ const Shop = () => {
 
   let handleFilter = () => {
     setFilteredRange({ min: minPrice, max: maxPrice });
+    setActive(false);
   };
 
   useEffect(() => {
@@ -108,13 +127,67 @@ const Shop = () => {
     }
   };
 
-  
   return (
     <>
       <section>
         <Container>
-          <div className="flex justify-between mt-[60px] z-0" ref={menuRef}>
-            <div className="w-[320px]">
+          <div className="mobile:flex computer:hidden gap-[30px] overflow-x-scroll overflow-hidden shadow-md pb-[20px] relative pt-[10px]">
+            <div className="">
+              <button
+                onClick={() => handleActive('a')}
+                aria-expanded={active.a}
+                aria-controls="shop-menu"
+                className={`text-[16px] font-bold font-display transition-all duration-300 ease-in-out ${
+                  active.a ? 'bg-[#629D23] text-white' : 'text-slate-500'
+                }  border border-[#ededed] w-[125px] h-[40px] rounded-full`}
+              >
+                Filter
+                <span className="ml-1.5">
+                  <i class="fa-solid fa-filter"></i>
+                </span>
+              </button>
+            </div>
+            <div className="absolute top-0 left-[140px] w-0.5 h-[80px] bg-black/30"></div>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => handleActive('b')}
+                className={`text-[16px] font-bold font-display transition-all duration-300 ease-in-out ${
+                  active.b ? 'bg-[#629D23] text-white' : 'text-slate-500'
+                }  border border-[#ededed] w-[125px] h-[40px] rounded-full`}
+              >
+                most purched
+              </button>
+              <button
+                onClick={() => handleActive('c')}
+                className={`text-[16px] font-bold font-display transition-all duration-300 ease-in-out ${
+                  active.c ? 'bg-[#629D23] text-white' : 'text-slate-500'
+                }  border border-[#ededed] w-[125px] h-[40px] rounded-full`}
+              >
+                most viewed
+              </button>
+              <button
+                onClick={() => handleActive('d')}
+                className={`text-[16px] font-bold font-display transition-all duration-300 ease-in-out ${
+                  active.d ? 'bg-[#629D23] text-white' : 'text-slate-500'
+                }  border border-[#ededed] w-[125px] h-[40px] rounded-full`}
+              >
+                Top Rated
+              </button>
+              <button
+                onClick={() => handleActive('e')}
+                className={`text-[16px] font-bold font-display transition-all duration-300 ease-in-out ${
+                  active.e ? 'bg-[#629D23] text-white' : 'text-slate-500'
+                }  border border-[#ededed] w-[125px] h-[40px] rounded-full`}
+              >
+                New Arrivals
+              </button>
+            </div>
+          </div>
+          <div
+            className="flex justify-between mobile:mt-[25px] computer:mt-[60px] z-0"
+            ref={menuRef}
+          >
+            <div className="w-[320px] mobile:hidden computer:block">
               <div className="mb-[20px] border border-[#e2e2e2] rounded-[8px]">
                 <h5 className="text-[20px] font-display font-bold text-[#2C3C28] border-b border-[#e2e2e2] py-[30px] pl-[30px] pr-[20px]">
                   Widget Price Filter
@@ -193,7 +266,7 @@ const Shop = () => {
               </div>
             </div>
 
-            <div className="w-[1300px]">
+            <div className="mobile:w-full computer:w-[1300px]">
               {query && (
                 <div className="flex justify-between items-center bg-[#F3F4F6] rounded-[6px] p-[15px] relative">
                   <h4>Showing {searchedProducts?.count} results</h4>
@@ -246,77 +319,79 @@ const Shop = () => {
                 {!loading &&
                   (query
                     ? searchedProducts.products?.map((pro, index) => (
-                        <div
-                          key={index}
-                          onClick={() => handleProductItem(pro._id)}
-                          className=" p-[15px] w-[250px] h-[386px] bg-[#F5F6F7] rounded-[6px] "
-                        >
-                          <div className=" relative bg-white w-[220px] h-[190px] rounded-[6px] overflow-hidden">
-                            <img
-                              className="w-[100%] h-auto hover:scale-120 ease-in-out duration-300  cursor-pointer"
-                              src={pro.photo}
-                              alt="jpg"
-                            />
-                            <div className="Bedge absolute top-0 left-[40px]  w-[35px] ">
-                              <div className="bg-yellow-400 text-green-900 font-display font-bold text-center text-[12px] h-[55px] flex items-center justify-center [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,  0_63%)]">
-                                25% <br></br>Off
+                        <>
+                          <div
+                            key={index}
+                            onClick={() => handleProductItem(pro._id)}
+                            className=" p-[15px] w-[250px] h-[386px] bg-[#F5F6F7] rounded-[6px] mobile:hidden computer:block"
+                          >
+                            <div className=" relative bg-white w-[220px] h-[190px] rounded-[6px] overflow-hidden">
+                              <img
+                                className="w-[100%] h-auto hover:scale-120 ease-in-out duration-300  cursor-pointer"
+                                src={pro.photo}
+                                alt="jpg"
+                              />
+                              <div className="Bedge absolute top-0 left-[40px]  w-[35px] ">
+                                <div className="bg-yellow-400 text-green-900 font-display font-bold text-center text-[12px] h-[55px] flex items-center justify-center [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,  0_63%)]">
+                                  25% <br></br>Off
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <h4 className="text-[16px] font-display font-bold mt-[10px] hover:text-[#629D23] transition-all ease-in-out duration-300 w-[220px] cursor-pointer ">
-                            {pro.name}
-                          </h4>
-                          <p className="text-[14px] font-display font-semibold text-black/30 mt-[10px]">
-                            {pro.stock} Pack
-                          </p>
-                          <div className="flex items-center gap-1.5 mt-1">
-                            <h3 className="text-[20px] font-display font-bold text-[#DC2626]">
-                              ${pro.price}
-                            </h3>
-                            <h3 className="line-through text-[18px] font-display font-semibold text-black/30">
-                              $36.00
-                            </h3>
-                          </div>
-                          <div className="flex items-center justify-between ">
-                            <div className="flex items-center bg-white p-3 rounded-[4px] gap-3">
-                              <div className="mr-[12px]">
-                                <h5 className="text-[14px] font-display font-bold">
-                                  1
-                                </h5>
+                            <h4 className="text-[16px] font-display font-bold mt-[10px] hover:text-[#629D23] transition-all ease-in-out duration-300 w-[220px] cursor-pointer ">
+                              {pro.name}
+                            </h4>
+                            <p className="text-[14px] font-display font-semibold text-black/30 mt-[10px]">
+                              {pro.stock} Pack
+                            </p>
+                            <div className="flex items-center gap-1.5 mt-1">
+                              <h3 className="text-[20px] font-display font-bold text-[#DC2626]">
+                                ${pro.price}
+                              </h3>
+                              <h3 className="line-through text-[18px] font-display font-semibold text-black/30">
+                                $36.00
+                              </h3>
+                            </div>
+                            <div className="flex items-center justify-between ">
+                              <div className="flex items-center bg-white p-3 rounded-[4px] gap-3">
+                                <div className="mr-[12px]">
+                                  <h5 className="text-[14px] font-display font-bold">
+                                    1
+                                  </h5>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500">
+                                    <i class="fa-solid fa-plus-large"></i>
+                                  </button>
+                                  <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500">
+                                    <i class="fa-solid fa-minus"></i>
+                                  </button>
+                                </div>
                               </div>
-                              <div className="flex items-center gap-2">
-                                <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500">
-                                  <i class="fa-solid fa-plus-large"></i>
+                              <div>
+                                <button className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white transition-all ease-in-out duration-300">
+                                  ADD
+                                  <span>
+                                    <i class="fa-light fa-cart-shopping"></i>
+                                  </span>
                                 </button>
-                                <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500">
-                                  <i class="fa-solid fa-minus"></i>
-                                </button>
                               </div>
                             </div>
-                            <div>
-                              <button className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white transition-all ease-in-out duration-300">
-                                ADD
-                                <span>
-                                  <i class="fa-light fa-cart-shopping"></i>
-                                </span>
-                              </button>
-                            </div>
                           </div>
-                        </div>
-                      ))
-                    : shopProducts?.map((product, indx) => (
-                        <div
-                          key={indx}
-                          onClick={() => handleProductItem(product._id)}
-                          className=" cursor-pointer p-[15px] w-[250px] h-[386px] bg-[#F5F6F7] rounded-[6px] "
-                        >
-                          <div className=" relative bg-white w-[220px] h-[190px] rounded-[6px] overflow-hidden">
-                            <img
-                              className="w-[100%] h-auto hover:scale-120 ease-in-out duration-300  cursor-pointer"
-                              src={product.photo}
-                              alt="jpg"
-                            />
-                            <div className="Bedge absolute top-0 left-[40px]  w-[35px] ">
+                          <div
+                            key={index}
+                            className="mobile:flex gap-[20px] border-b border-[#e2e2e2] py-5 computer:hidden relative"
+                          >
+                            <div
+                              onClick={() => handleProductItem(pro._id)}
+                              className="w-[170px] h-[260px] flex items-center justify-center bg-[#F5F6F7]"
+                            >
+                              <img
+                                className="w-[146px] h-auto rounded-md"
+                                src={pro.photo}
+                                alt="lengquage"
+                              />
+                            </div>
+                            <div className="Bedge absolute top-[20px] left-0 w-[35px] ">
                               <div
                                 className="bg-yellow-400 text-green-900 font-display font-bold text-center text-[12px] h-[55px] flex items-center justify-center
                                [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,0_63%)]"
@@ -324,47 +399,157 @@ const Shop = () => {
                                 25% <br></br>Off
                               </div>
                             </div>
-                          </div>
-                          <h4 className="text-[16px] font-display font-bold mt-[10px] hover:text-[#629D23] transition-all ease-in-out duration-300 w-[220px] cursor-pointer ">
-                            {product.name}
-                          </h4>
-                          <p className="text-[14px] font-display font-semibold text-black/30 mt-[10px]">
-                            {product.stock} Pack
-                          </p>
-                          <div className="flex items-center gap-1.5 mt-1">
-                            <h3 className="text-[20px] font-display font-bold text-[#DC2626]">
-                              ${product.price}
-                            </h3>
-                            <h3 className="line-through text-[18px] font-display font-semibold text-black/30">
-                              $36.00
-                            </h3>
-                          </div>
-                          <div className="flex items-center justify-between ">
-                            <div className="flex items-center bg-white p-3 rounded-[4px] gap-3">
-                              <div className="mr-[12px]">
-                                <h5 className="text-[14px] font-display font-bold">
-                                  1
-                                </h5>
-                              </div>
-                              <div className="flex items-center gap-2">
-                                <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500">
-                                  <i class="fa-solid fa-plus-large"></i>
-                                </button>
-                                <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500">
-                                  <i class="fa-solid fa-minus"></i>
-                                </button>
-                              </div>
-                            </div>
                             <div>
-                              <button className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white transition-all ease-in-out duration-300">
-                                ADD
-                                <span>
-                                  <i class="fa-light fa-cart-shopping"></i>
-                                </span>
+                              <h4
+                                onClick={() => handleProductItem(pro._id)}
+                                className="wrap-break-word text-[16px] font-display font-bold text-[#2C3C28] line-clamp-4 text-ellipsis overflow-hidden h-[140px] w-[200px]"
+                              >
+                                {pro.name}
+                              </h4>
+                              {pro.stock > 1 ? (
+                                <h4 className="text-[14px] font-display font-bold text-[#4dc32f] h-[22px]">
+                                  In Stock
+                                </h4>
+                              ) : (
+                                <h4 className="text-[14px] font-display font-bold text-[#ff7424] h-[22px]">
+                                  Out of Stock
+                                </h4>
+                              )}
+                              <h4 className="text-[16px] font-display font-bold text-[#2C3C28] h-[22px]">
+                                product brand
+                              </h4>
+                              <div className="flex items-center gap-2 h-[35px]">
+                                <h4 className="text-[20px] font-bold text-[#2C3C28] ">
+                                  ${pro.price}
+                                </h4>
+                                <h4 className="text-[16px] line-through font-bold text-slate-500 ">
+                                  $900
+                                </h4>
+                              </div>
+                              <button className="text-[18px] font-display font-semibold text-[#FFF] py-[7px] px-3 rounded-[6px] bg-[#629D23] cursor-pointer">
+                                ADD TO CART
                               </button>
                             </div>
                           </div>
-                        </div>
+                        </>
+                      ))
+                    : shopProducts?.map((product, indx) => (
+                        <>
+                          <div
+                            key={indx}
+                            onClick={() => handleProductItem(product._id)}
+                            className=" cursor-pointer p-[15px] w-[250px] h-[386px] bg-[#F5F6F7] rounded-[6px] mobile:hidden computer:block"
+                          >
+                            <div className=" relative bg-white w-[220px] h-[190px] rounded-[6px] overflow-hidden">
+                              <img
+                                className="w-[100%] h-auto hover:scale-120 ease-in-out duration-300  cursor-pointer"
+                                src={product.photo}
+                                alt="jpg"
+                              />
+                              <div className="Bedge absolute top-0 left-[40px]  w-[35px] ">
+                                <div
+                                  className="bg-yellow-400 text-green-900 font-display font-bold text-center text-[12px] h-[55px] flex items-center justify-center
+                               [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,0_63%)]"
+                                >
+                                  25% <br></br>Off
+                                </div>
+                              </div>
+                            </div>
+                            <h4 className="text-[16px] font-display font-bold mt-[10px] hover:text-[#629D23] transition-all ease-in-out duration-300 w-[220px] cursor-pointer ">
+                              {product.name}
+                            </h4>
+                            <p className="text-[14px] font-display font-semibold text-black/30 mt-[10px]">
+                              {product.stock} Pack
+                            </p>
+                            <div className="flex items-center gap-1.5 mt-1">
+                              <h3 className="text-[20px] font-display font-bold text-[#DC2626]">
+                                ${product.price}
+                              </h3>
+                              <h3 className="line-through text-[18px] font-display font-semibold text-black/30">
+                                $36.00
+                              </h3>
+                            </div>
+                            <div className="flex items-center justify-between ">
+                              <div className="flex items-center bg-white p-3 rounded-[4px] gap-3">
+                                <div className="mr-[12px]">
+                                  <h5 className="text-[14px] font-display font-bold">
+                                    1
+                                  </h5>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500">
+                                    <i class="fa-solid fa-plus-large"></i>
+                                  </button>
+                                  <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500">
+                                    <i class="fa-solid fa-minus"></i>
+                                  </button>
+                                </div>
+                              </div>
+                              <div>
+                                <button className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white transition-all ease-in-out duration-300">
+                                  ADD
+                                  <span>
+                                    <i class="fa-light fa-cart-shopping"></i>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            key={indx}
+                            className="mobile:flex gap-[20px] border-b border-[#e2e2e2] py-5 computer:hidden relative"
+                          >
+                            <div
+                              onClick={() => handleProductItem(product._id)}
+                              className=" w-[170px] h-[260px] flex items-center justify-center bg-[#F5F6F7]"
+                            >
+                              <img
+                                className="w-[146px] h-auto rounded-md"
+                                src={product.photo}
+                                alt="lengquage"
+                              />
+                            </div>
+                            <div className="Bedge absolute top-[20px] left-0 w-[35px] ">
+                              <div
+                                className="bg-yellow-400 text-green-900 font-display font-bold text-center text-[12px] h-[55px] flex items-center justify-center
+                               [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,0_63%)]"
+                              >
+                                25% <br></br>Off
+                              </div>
+                            </div>
+                            <div>
+                              <h4
+                                onClick={() => handleProductItem(product._id)}
+                                className="wrap-break-word text-[16px] font-display font-bold text-[#2C3C28] line-clamp-4 text-ellipsis overflow-hidden h-[140px] w-[200px]"
+                              >
+                                {product.name}
+                              </h4>
+                              {product.stock > 1 ? (
+                                <h4 className="text-[14px] font-display font-bold text-[#4dc32f] h-[22px]">
+                                  In Stock
+                                </h4>
+                              ) : (
+                                <h4 className="text-[14px] font-display font-bold text-[#ff7424] h-[22px]">
+                                  Out of Stock
+                                </h4>
+                              )}
+                              <h4 className="text-[16px] font-display font-bold text-[#2C3C28] h-[22px]">
+                                product brand
+                              </h4>
+                              <div className="flex items-center gap-2 h-[35px]">
+                                <h4 className="text-[20px] font-bold text-[#2C3C28] ">
+                                  ${product.price}
+                                </h4>
+                                <h4 className="text-[16px] line-through font-bold text-slate-500 ">
+                                  $900
+                                </h4>
+                              </div>
+                              <button className="text-[18px] font-display font-semibold text-[#FFF] py-[7px] px-3 rounded-[6px] bg-[#629D23] cursor-pointer">
+                                ADD TO CART
+                              </button>
+                            </div>
+                          </div>
+                        </>
                       )))}
               </div>
             </div>
@@ -375,6 +560,102 @@ const Shop = () => {
               setActive={setCurrentPage}
               totalPages={totalPages}
             />
+          </div>
+          <div
+            id="shop-menu"
+            className={`fixed bottom-0 left-0 z-50 w-full h-screen bg-white transform origin-bottom transition-all duration-500 ease-in-out overflow-y-auto p-2 ${
+              active.a
+                ? 'translate-y-[120px] opacity-100'
+                : 'translate-y-full opacity-0 pointer-events-none'
+            }`}
+          >
+            <div className="fixed top-0 left-0 w-full bg-white z-50 shadow-sm flex items-center justify-between px-5 py-4 border-b border-[#e2e2e2]">
+              <h4 className="font-bold text-2xl">Filter</h4>
+              <span
+                onClick={() => setActive(false)}
+                className="text-2xl cursor-pointer hover:text-[#629D23] transition-colors"
+              >
+                <i className="fa-light fa-xmark"></i>
+              </span>
+            </div>
+            <div className="overflow-y-auto h-full pt-[90px] pb-[40px] px-3">
+              <div className="mb-[20px] border border-[#e2e2e2] rounded-[8px]">
+                <h5 className="text-[20px] font-display font-bold text-[#2C3C28] border-b border-[#e2e2e2] py-[30px] pl-[30px] pr-[20px]">
+                  Widget Price Filter
+                </h5>
+                <div className="flex justify-between gap-3 px-[20px] pt-[30px] pb-[15px]">
+                  <div className="flex-1">
+                    <label className="block text-sm text-[#6E777D] mb-1">
+                      Min price
+                    </label>
+                    <input
+                      type="number"
+                      value={minPrice}
+                      onChange={e => SetminPrice(Number(e.target.value))}
+                      className="w-full border border-[#e2e2e2] rounded-[4px] px-[15px] py-1.5 outline-none font-medium text-[#2C3C28]"
+                    />
+                  </div>
+
+                  <div className="flex-1">
+                    <label className="block text-sm text-[#6E777D] mb-1">
+                      Max price
+                    </label>
+                    <input
+                      type="number"
+                      value={maxPrice}
+                      onChange={e => SetmaxPrice(Number(e.target.value))}
+                      className="w-full border border-[#e2e2e2] rounded-[4px] px-[15px] py-1.5 outline-none font-medium text-[#2C3C28]"
+                    />
+                  </div>
+                </div>
+                <div className="px-[20px] mb-[30px]">
+                  <input
+                    type="range"
+                    min={0}
+                    max={128}
+                    value={CurrentPrice}
+                    onChange={handleRangeChange}
+                    className="w-full h-2 bg-[#629D23] rounded-lg appearance-none cursor-pointer accent-[#629D23]"
+                  />
+                  <div className="flex justify-between items-center">
+                    <p className="mt-3 text-[18px] font-display font-normal text-[#6E777D]">
+                      Price: ${minPrice} — ${maxPrice}
+                    </p>
+
+                    <button
+                      onClick={handleFilter}
+                      className="mt-3 bg-[#629D23] hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md cursor-pointer"
+                    >
+                      Filter
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-[20px] border border-[#e2e2e2] rounded-[8px]">
+                <h5 className="text-[20px] font-display font-bold text-[#2C3C28] border-b border-[#e2e2e2] py-[30px] pl-[30px] pr-[20px]">
+                  Product Categories
+                </h5>
+                <div className="p-[20px]">
+                  <ul>
+                    <li className="list-disc text-[14px] font-display font-medium text-[#2C3C28] leading-[17px] ml-[25px] mb-[13px]">
+                      <a href="#">Potato</a>
+                    </li>
+                    <li className="list-disc text-[14px] font-display font-medium text-[#2C3C28] leading-[17px] ml-[25px] mb-[13px]">
+                      <a href="#">Potato</a>
+                    </li>
+                    <li className="list-disc text-[14px] font-display font-medium text-[#2C3C28] leading-[17px] ml-[25px] mb-[13px]">
+                      <a href="#">Potato</a>
+                    </li>
+                    <li className="list-disc text-[14px] font-display font-medium text-[#2C3C28] leading-[17px] ml-[25px] mb-[13px]">
+                      <a href="#">Potato</a>
+                    </li>
+                    <li className="list-disc text-[14px] font-display font-medium text-[#2C3C28] leading-[17px] ml-[25px] ">
+                      <a href="#">Potato</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </section>

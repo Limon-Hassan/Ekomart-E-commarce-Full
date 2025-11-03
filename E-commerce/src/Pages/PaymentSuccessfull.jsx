@@ -2,10 +2,9 @@ import React from 'react';
 import Container from '../Container';
 
 const PaymentSuccessfull = () => {
-
   return (
     <>
-      <section>
+      <section className="mobile:py-[50px] computer:py-[100px]">
         <Container>
           <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
             <div className="w-full max-w-2xl p-12 mx-4 text-center transition-all transform bg-white shadow-lg rounded-xl hover:shadow-xl">
@@ -35,7 +34,8 @@ const PaymentSuccessfull = () => {
 
               <div className="p-6 mb-8 rounded-lg bg-blue-50">
                 <p className="text-lg font-medium text-blue-700">
-                  Your tool <span className="font-bold">"http://example.com"</span>
+                  Your tool{' '}
+                  <span className="font-bold">"http://example.com"</span>
                   will be listed shortly.
                 </p>
               </div>

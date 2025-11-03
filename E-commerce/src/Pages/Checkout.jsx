@@ -79,7 +79,12 @@ const Checkout = () => {
 
       let response = await api.post(`checkout/MakeCheckout/${id}`, payload);
       if (response) {
-        if (!Selectpayment === 'Payment by Stripe') {
+        let orderID = response.data.order.uniqueOrderID;
+        setOrderID(orderID);
+        localStorage.setItem('orderID', orderID);
+        if (Selectpayment === 'Payment by Stripe') {
+          setSelectpaymentStipe(true);
+        } else if (Selectpayment === 'cash on delivery') {
           setCart([]);
           setSummeryData({});
           setName('');
@@ -89,15 +94,8 @@ const Checkout = () => {
           setPhone('');
           localStorage.removeItem('cart');
           window.dispatchEvent(new Event('storage'));
-        }
-        let orderID = response.data.order.uniqueOrderID;
-        setOrderID(orderID);
-        localStorage.setItem('orderID', orderID);
-        if (Selectpayment === 'Payment by Stripe') {
-          setSelectpaymentStipe(true);
-        } else {
-          window.location.href = `/success/${orderID}`;
           enqueueSnackbar('Order placed successfully!', { variant: 'success' });
+          window.location.href = `/success/${orderID}`;
         }
       }
     } catch (error) {
@@ -110,10 +108,10 @@ const Checkout = () => {
   };
   return (
     <>
-      <section className="py-[100px] bg-[#F3F4F6]">
+      <section className="mobile:py-[50px] computer:py-[100px] bg-[#F3F4F6]">
         <Container>
-          <div className="flex items-center gap-[50px] mb-[50px]">
-            <div className="w-[70%]">
+          <div className="flex flex-wrap items-center gap-[50px] mb-[50px]">
+            <div className=" mobile:w-full computer:w-[70%]">
               <h4 className="text-[30px] font-display font-bold leading-[54px] text-[#2C3C28] my-[30px]">
                 Billing Details
               </h4>
@@ -198,7 +196,7 @@ const Checkout = () => {
                 />
               </div>
             </div>
-            <div>
+            <div className="mobile:w-full computer:w-auto">
               <div className="flex items-center ">
                 <h3 className="text-[30px] font-display font-bold text-[#2C3C28]">
                   Your Order
@@ -208,12 +206,12 @@ const Checkout = () => {
               <div class=" mt-[20px] max-w-md ">
                 <div class="rounded-[6px] bg-white border-2 border-[#629D23]">
                   <div class="px-4 py-6 sm:px-8 sm:py-10">
-                    <div class="flow-root">
-                      <ul class="-my-8 overflow-y-scroll h-[270px] mb-[20px]">
+                    <div class="flow-root overflow-hidden">
+                      <ul class=" overflow-y-scroll h-[270px] mb-[20px] w-full ">
                         {cart.map((item, index) => (
                           <li
                             key={index}
-                            class="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0"
+                            class="flex flex-wrap w-full gap-[20px] py-[20px] text-left border-b border-[#e8e8e8]"
                           >
                             <div class="shrink-0 relative">
                               <span class="absolute top-1 left-1 flex h-6 w-6 items-center justify-center rounded-full border bg-white text-sm font-medium text-gray-500 shadow sm:-top-2 sm:-right-2">

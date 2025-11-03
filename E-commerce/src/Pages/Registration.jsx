@@ -61,12 +61,12 @@ const Registration = () => {
       <section className="bg-[#F3F4F6] py-[60px]">
         <Container>
           <div>
-            <div className="max-w-[800px] rounded-[20px] bg-white text-center m-auto py-[100px] px-[150px]">
+            <div className="mobile:w-full computer:max-w-[800px] rounded-[20px] bg-white text-center mx-auto mobile:py-[30px] mobile:px-[20px] computer:py-[100px] computer:px-[150px]">
               <img className="max-w-[57px] mx-auto" src="fav.png" alt="logo" />
               <h2 className="text-[26px] font-display font-bold leading-[56px] mb-[20px] text-[#2C3C28]">
                 Register Into Your Account
               </h2>
-              <div className="input-wapper w-[500px] h-[50px] text-left mb-[60px]">
+              <div className="input-wapper mobile:w-auto computer:w-[500px] h-[50px] text-left mb-[60px]">
                 <label className=" font-medium text-[#2C3C28]" for="name">
                   Username*
                 </label>
@@ -79,7 +79,7 @@ const Registration = () => {
                   name="name"
                 />
               </div>
-              <div className="input-wapper w-[500px] h-[50px] text-left mb-[60px]">
+              <div className="input-wapper mobile:w-auto computer:w-[500px] h-[50px] text-left mb-[60px]">
                 <label className=" font-medium text-[#2C3C28]" for="name">
                   Email*
                 </label>
@@ -93,13 +93,13 @@ const Registration = () => {
                 />
                 {error && <p className="text-red-500 mb-4">{error}</p>}
               </div>
-              <div className="input-wapper relative w-[500px] h-[50px] text-left mb-[60px]">
+              <div className="input-wapper relative mobile:w-auto computer:w-[500px] h-[50px] text-left mb-[60px]">
                 <label className=" font-medium text-[#2C3C28]" for="password">
                   Password*
                 </label>
                 <input
                   onChange={handleInputs}
-                  className="  border mt-[10px] border-[#ebebeb] rounded-[5px] w-full h-full text-[16px] font-display font-normal leading-7 bg-transparent pl-[15px] pr-[55px] outline-none focus:border-[#629D23] transition-all ease-in-out duration-500"
+                  className="  border mt-[10px]  border-[#ebebeb] rounded-[5px] w-full h-full text-[16px] font-display font-normal leading-7 bg-transparent pl-[15px] pr-[55px] outline-none focus:border-[#629D23] transition-all ease-in-out duration-500"
                   type={showPassword ? 'text' : 'password'}
                   id="password"
                   value={formData.password}
@@ -124,7 +124,7 @@ const Registration = () => {
               <button
                 onClick={handleSubmit}
                 disabled={loading}
-                className="text-[16px] w-[500px] font-bold font-display text-[#fff] bg-[#629D23] px-[25px] py-[14px] rounded-[6px] mb-[30px] cursor-pointer"
+                className="text-[16px] mobile:w-full computer:w-[500px] font-bold font-display text-[#fff] bg-[#629D23] px-[25px] py-[14px] rounded-[6px] mb-[30px] cursor-pointer"
               >
                 {loading ? 'Creating Account...' : 'Register Account'}
               </button>
@@ -133,7 +133,7 @@ const Registration = () => {
                   window.location.href =
                     'https://evato-e-commerce.onrender.com/api/v2/user/google';
                 }}
-                className="text-[16px] w-[500px] font-bold font-display text-[#fff] bg-[#629D23] px-[25px] py-[14px] rounded-[6px] mb-[30px] cursor-pointer"
+                className="text-[16px] mobile:w-full computer:w-[500px] font-bold font-display text-[#fff] bg-[#629D23] px-[25px] py-[14px] rounded-[6px] mb-[30px] cursor-pointer"
               >
                 Register with
                 <span className="ml-[12px]">
@@ -143,12 +143,12 @@ const Registration = () => {
 
               <p className="text-[16px] font-display font-normal text-[#6E777D]">
                 Already Have an Account ?
-                <Link
-                  to="/login"
+                <a
+                  href="/login"
                   className="text-[16px] font-display font-bold text-black ml-[12px] cursor-pointer"
                 >
                   Login
-                </Link>
+                </a>
               </p>
             </div>
           </div>
