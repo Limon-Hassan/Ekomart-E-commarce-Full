@@ -29,7 +29,6 @@ const Login = () => {
       if (response.data.msg === 'User Login Sucessfull !') {
         let { token, userId } = response.data;
         let safeUser = { token, userId };
-        console.log(response.data);
         localStorage.setItem('auth-Info', JSON.stringify(safeUser));
         setTimeout(() => {
           navigate('/');

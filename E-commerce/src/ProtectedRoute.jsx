@@ -8,9 +8,15 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     async function checkAuth() {
       try {
-        await api.get('auth/me');
-        setAuth(true);
+        const res = await api.get('user/me');
+        if (res.data?.user) {
+          setAuth(true);
+        } else {
+          localStorage.removeItem('auth-Info');
+          setAuth(false);
+        }
       } catch (err) {
+        localStorage.removeItem('auth-Info');
         setAuth(false);
       }
     }
