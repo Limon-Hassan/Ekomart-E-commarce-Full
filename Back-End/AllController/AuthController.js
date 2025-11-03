@@ -171,7 +171,7 @@ async function googleLogin(req, res, next) {
       maxAge: 60 * 60 * 1000,
     });
 
-    res.redirect('http://localhost:5173/google/success');
+    res.redirect('https://evato-e-commarce-full.onrender.com/google/success');
   } catch (err) {
     next(err);
     return res.json({ msg: 'server error !', error: err.message });
