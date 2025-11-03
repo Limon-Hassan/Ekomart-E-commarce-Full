@@ -24,7 +24,6 @@ import GoogleRedirect from './Pages/GoogleRedirect';
 import PaymentSuccessfull from './Pages/PaymentSuccessfull';
 import TrackOrder from './Pages/TrackOrder';
 import ProtectedRoute from './ProtectedRoute';
-import CustomerReviews from './Pages/CustomerReviews';
 
 function Layout() {
   const location = useLocation();
@@ -66,14 +65,6 @@ function Layout() {
           }
         />
         <Route path="/productDetails/:id/:slug" element={<ProductDetails />} />
-        <Route
-          path="/CustomerReviews"
-          element={
-            <ProtectedRoute>
-              <CustomerReviews />
-            </ProtectedRoute>
-          }
-        />
         <Route
           path="/orderDetails"
           element={

@@ -14,7 +14,6 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import api from '../Api/axios';
 import { SocketContext } from '../socket/SocketContext';
-import ProtectedRoute from '../ProtectedRoute';
 
 const ProductDetails = () => {
   let [buttonActive, setButtonActive] = useState({
@@ -263,11 +262,7 @@ const ProductDetails = () => {
             <div className="mt-[20px] relative">
               {buttonActive.a && <ProductDetalisPart1 />}
               {buttonActive.b && <AddictionalDetail />}
-              {buttonActive.c && (
-                <ProtectedRoute>
-                  <CustomerReviews product={product} />
-                </ProtectedRoute>
-              )}
+              {buttonActive.c && <CustomerReviews product={product} />}
             </div>
           </div>
 
