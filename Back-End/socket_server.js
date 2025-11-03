@@ -4,7 +4,11 @@ let io;
 function init(server) {
   io = new Server(server, {
     cors: {
-      origin: 'http://localhost:5173',
+      origin: [
+        'http://localhost:5173',
+        'https://evato-e-commarce-full.onrender.com/',
+        'https://evato-e-commerce.onrender.com/',
+      ],
       methods: ['GET', 'POST'],
     },
   });

@@ -16,7 +16,11 @@ app.use(express.json());
 app.use(passport.initialize());
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: [
+      'http://localhost:5173',
+      'https://evato-e-commarce-full.onrender.com/',
+      'https://evato-e-commerce.onrender.com/',
+    ],
     credentials: true,
   })
 );
