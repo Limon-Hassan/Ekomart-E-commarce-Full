@@ -39,7 +39,13 @@ const Page3 = () => {
   }, [socket]);
 
   let handleCartItem = async product => {
-    let userId = JSON.parse(localStorage.getItem('auth-Info')).user.id;
+    let authInfo = localStorage.getItem('auth-Info');
+    if (!authInfo) {
+      window.location.href = '/login';
+      return;
+    }
+    let userData = JSON.parse(authInfo);
+    let userId = userData?.user?.id;
     try {
       let payload = {
         user: userId,
@@ -98,11 +104,11 @@ const Page3 = () => {
 
   return (
     <>
-      <section className="bg-[#dbe2e9]/30 mobile:pt-0 computer:pt-[60px]">
+      <section className="bg-[#dbe2e9]/30 mobile:pt-[20px] tablet:pt-[60px] laptop:pt-[60px] computer:pt-[60px]">
         <Container>
-          <div className="bg-white rounded-[8px] mobile:pt-[20px] computer:pt-[30px] p-[15px]  border border-[#e2e2e2]">
-            <div className="computer:flex mobile:flex mobile:flex-wrap items-center justify-between pb-[30px] border-b border-[#e2e2e2]">
-              <h2 className="mobile:text-[22px] computer:text-[30px] font-display font-bold leading-1.5 text-[#2C3C28]">
+          <div className="bg-white rounded-[8px] mobile:pt-[20px] tablet:pt-[30px] laptop:pt-[30px] computer:pt-[30px] p-[15px]  border border-[#e2e2e2]">
+            <div className="computer:flex computer:flex-nowrap mobile:flex mobile:flex-wrap items-center justify-between pb-[30px] border-b border-[#e2e2e2]">
+              <h2 className="mobile:text-[20px] tablet:text-[22px] laptop:text-[25px] computer:text-[30px] font-display font-bold leading-1.5 text-[#2C3C28]">
                 Weekly Best Selling Groceries
               </h2>
               <div className="computer:flex mobile:flex mobile:flex-wrap items-center gap-4 computer:mt-0 mobile:mt-[45px]">
@@ -134,7 +140,7 @@ const Page3 = () => {
                   {products?.map(pro => (
                     <div
                       key={pro._id}
-                      className=" p-[15px] mobile:w-[100%] mobile:h-[430px] mobile:mx-auto computer:w-[250px] computer:mx-0 computer:h-[386px] bg-[#F5F6F7] rounded-[6px] "
+                      className=" p-[15px] mobile:w-[100%] mobile:h-[430px] mobile:mx-auto computer:w-[250px] tablet:w-[250px] laptop:w-[250px] computer:mx-0 computer:h-[386px] tablet:h-[386px] laptop:h-[386px] bg-[#F5F6F7] rounded-[6px] "
                     >
                       <div
                         onClick={() => handleProductItem(pro._id)}
@@ -156,14 +162,17 @@ const Page3 = () => {
                       </div>
                       <h4
                         onClick={() => handleProductItem(pro._id)}
-                        className="text-[16px] font-display mobile:h-[55px] computer:h-auto font-bold mt-[10px] hover:text-[#629D23] transition-all ease-in-out duration-300 w-[220px] cursor-pointer "
+                        className=" wrap-break-word text-[16px] font-display mobile:h-[52px] mobile:w-[250px] tablet:w-[228px] tablet:h-[52px] laptop:h-[50px] laptop:w-[220px] computer:h-[50px] computer:w-[220px] font-bold mt-[10px] hover:text-[#629D23] transition-all ease-in-out duration-300 cursor-pointer line-clamp-2 text-ellipsis overflow-hidden"
                       >
                         {pro.name}
                       </h4>
-                      <p className="text-[14px] mobile:h-[22px] computer:h-auto font-display font-semibold text-black/30 mt-[10px]">
+                      <p
+                        className="text-[14px] mobile:h-[15px] computer:h-auto
+                      tablet:h-[5px] laptop:h-[5px] font-display font-semibold text-black/30 mt-[10px]"
+                      >
                         {pro.stock} Pack
                       </p>
-                      <div className="flex mobile:h-[55px] computer:h-auto items-center gap-1.5 mt-1">
+                      <div className="flex mobile:h-[50px] tablet:h-[50px] laptop:h-[50px] computer:h-auto items-center gap-1.5 mt-1">
                         <h3 className="text-[20px] font-display font-bold text-[#DC2626]">
                           ${pro.price}
                         </h3>

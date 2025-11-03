@@ -21,7 +21,6 @@ const ProductDetails = () => {
     b: false,
     c: false,
   });
-  let navigate = useNavigate();
   const { id } = useParams();
   const socket = useContext(SocketContext);
   let { enqueueSnackbar } = useSnackbar();

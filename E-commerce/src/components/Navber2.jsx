@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 const Navber2 = () => {
   return (
     <>
-      <nav className="bg-[#22351E] mobile:hidden computer:block">
+      <nav className="bg-[#22351E] mobile:hidden tablet:hidden laptop:block computer:block">
         <Container>
           <div className="flex items-center justify-between">
-            <div className="relative w-[280px] inline-block group">
-              <button className="text-[20px] group-hover:bg-black transition-all ease-in-out duration-300 font-display font-semibold text-[#fff] bg-[#629D23] py-[22px] px-[25px] w-full cursor-pointer">
+            <div className="relative laptop:w-[180px] computer:w-[280px] inline-block group">
+              <button className="computer:text-[20px] laptop:text-[18px] group-hover:bg-black transition-all ease-in-out duration-300 font-display font-semibold text-[#fff] bg-[#629D23] computer:py-[22px] laptop:py-[16px] computer:px-[25px] laptop:px-0 w-full cursor-pointer">
                 All Categories
-                <span className="ml-[80px]">
+                <span className="computer:ml-[80px] laptop:ml-0 ">
                   <i class="fa-light fa-chevrons-down"></i>
                 </span>
               </button>

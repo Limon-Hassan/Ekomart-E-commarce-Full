@@ -4,14 +4,14 @@ import Container from '../Container';
 const Page7 = () => {
   return (
     <>
-      <section className="bg-[#dbe2e9]/30  mobile:pb-[25px] computer:pb-[80px] mobile:pt-0 computer:pt-[60px]">
+      <section className="bg-[#dbe2e9]/30 mobile:pb-[25px] computer:pb-[50px] tablet:pb-[50px] laptop:pb-[50px] mobile:pt-[20px] computer:pt-[60px] tablet:pt-[60px] laptop:pt-[60px]">
         <Container>
           <div>
             <h3 className="computer:text-[30px] mobile:text-[26px] font-display font-bold text-[#000] leading-1.5 mb-[50px]">
               Latest Blog Post Insights
             </h3>
 
-            <div className="bg-white rounded-[6px] mobile:p-[15px] computer:p-[30px] flex flex-wrap items-center gap-[15px]">
+            <div className="bg-white grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-[20px]">
               <div className="group mobile:w-auto mobile:h-auto computer:w-[390px] computer:h-[445px] rounded-t-[8px] overflow-hidden">
                 <img
                   className="group-hover:scale-110 ease-in-out duration-300 cursor-pointer"

@@ -11,7 +11,7 @@ import Container from '../Container';
 const Page6 = () => {
   return (
     <>
-      <section className="bg-[#dbe2e9]/30 mobile:pb-[25px] computer:pb-[50px] mobile:pt-0 computer:pt-[60px]">
+      <section className="bg-[#dbe2e9]/30 mobile:pb-[25px] computer:pb-[50px] tablet:pb-[50px] laptop:pb-[50px] mobile:pt-[20px] computer:pt-[60px] tablet:pt-[60px] laptop:pt-[60px]">
         <Container>
           <div>
             <div className="bg-white rounded-[8px] mobile:p-[20px] computer:p-[30px]">
@@ -41,17 +41,29 @@ const Page6 = () => {
                     prevEl: '.swiper-button-prev-custom',
                   }}
                   breakpoints={{
-                    0: {
+                    320: {
                       slidesPerView: 1,
                       spaceBetween: 16,
                     },
-                    768: {
-                      slidesPerView: 3,
+                    420: {
+                      slidesPerView: 1,
                       spaceBetween: 16,
                     },
+                    620: {
+                      slidesPerView: 2,
+                      spaceBetween: 10,
+                    },
+                    720: {
+                      slidesPerView: 2,
+                      spaceBetween: 10,
+                    },
                     1024: {
-                      slidesPerView: 6,
-                      spaceBetween: 16,
+                      slidesPerView: 3,
+                      spaceBetween: 10,
+                    },
+                    1324: {
+                      slidesPerView: 5,
+                      spaceBetween: 10,
                     },
                   }}
                 >
@@ -307,7 +319,7 @@ const Page6 = () => {
                   <button className="swiper-button-prev-customs bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] hover:text-white rounded-[8px] flex justify-center items-center ease-in-out duration-300 cursor-pointer">
                     <i class="fa-regular fa-arrow-left-from-arc"></i>
                   </button>
-                  <button className="swiper-button-next-customs  bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] rounded-[8px]  hover:text-white flex justify-center items-center ease-in-out duration-300 cursor-pointer">
+                  <button className="swiper-button-next-customs  bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] rounded-[8px] hover:text-white flex justify-center items-center ease-in-out duration-300 cursor-pointer">
                     <i class="fa-regular fa-arrow-right-from-arc"></i>
                   </button>
                 </span>
@@ -325,17 +337,29 @@ const Page6 = () => {
                     prevEl: '.swiper-button-prev-customs',
                   }}
                   breakpoints={{
-                    0: {
+                    320: {
                       slidesPerView: 1,
                       spaceBetween: 16,
                     },
-                    768: {
-                      slidesPerView: 3,
+                    420: {
+                      slidesPerView: 1,
                       spaceBetween: 16,
                     },
+                    620: {
+                      slidesPerView: 2,
+                      spaceBetween: 10,
+                    },
+                    720: {
+                      slidesPerView: 2,
+                      spaceBetween: 10,
+                    },
                     1024: {
-                      slidesPerView: 6,
-                      spaceBetween: 16,
+                      slidesPerView: 3,
+                      spaceBetween: 10,
+                    },
+                    1324: {
+                      slidesPerView: 5,
+                      spaceBetween: 10,
                     },
                   }}
                 >

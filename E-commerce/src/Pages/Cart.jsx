@@ -11,11 +11,14 @@ const Cart = () => {
 
   async function fetchCart() {
     try {
-      let id = JSON.parse(localStorage.getItem('auth-Info')).user.id;
-      if (!id) {
+      let authInfo = localStorage.getItem('auth-Info');
+      if (!authInfo) {
         window.location.href = '/login';
         return;
       }
+      let userData = JSON.parse(authInfo);
+      let id = userData?.user?.id;
+
       let response = await api.get(`Cart/readCart/${id}`);
       setCartProduct(response.data);
     } catch (error) {

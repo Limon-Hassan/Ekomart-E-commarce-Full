@@ -5,10 +5,10 @@ import Page5 from './Page5';
 const Page4 = () => {
   return (
     <>
-      <section className="bg-[#dbe2e9]/30 mobile:pt-0 computer:pt-[60px] ">
+      <section className="bg-[#dbe2e9]/30 mobile:pt-[20px] tablet:pt-[60px] laptop:pt-[60px] computer:pt-[60px] ">
         <Container>
-          <div className="computer:flex computer:flex-row mobile:flex mobile:flex-col items-center gap-3">
-            <div className="bg-[url(/01.jpg)] w-full mobile:h-[300px] computer:h-[400px] bg-no-repeat mobile:py-[30px] mobile:px-[20px] computer:py-[40px] computer:px-[70px]  bg-cover">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4">
+            <div className="bg-[url(/01.jpg)] w-full mobile:h-[300px] tablet:h-[400px] laptop:h-[400px] computer:h-[400px] bg-no-repeat mobile:py-[30px] mobile:px-[20px] computer:py-[40px] computer:px-[70px]  bg-cover">
               <div className="">
                 <button className="text-[16px] font-display font-bold text-[#FFF] py-[7px] px-[26px] rounded-[6px] bg-[#629D23] mb-[25px]">
                   Weekend Discount
@@ -29,7 +29,7 @@ const Page4 = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[url(/02.jpg)] w-full mobile:h-[300px] computer:h-[400px] bg-no-repeat mobile:py-[30px] mobile:px-[20px] computer:py-[40px] computer:px-[70px]  bg-cover">
+            <div className="bg-[url(/02.jpg)] w-full mobile:h-[300px] tablet:h-[400px] laptop:h-[400px] computer:h-[400px] bg-no-repeat mobile:py-[30px] mobile:px-[20px] computer:py-[40px] computer:px-[70px]  bg-cover">
               <div className="">
                 <button className="text-[16px] font-display font-bold text-[#FFF] py-[7px] px-[26px] rounded-[6px] bg-[#629D23] mb-[25px]">
                   Weekend Discount
@@ -50,7 +50,7 @@ const Page4 = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[url(/03.jpg)]  w-full mobile:h-[300px] computer:h-[400px] bg-no-repeat mobile:py-[30px] mobile:px-[20px] computer:py-[40px] computer:px-[70px]  bg-cover">
+            <div className="bg-[url(/03.jpg)] w-full mobile:h-[300px] tablet:h-[400px] laptop:h-[400px] computer:h-[400px] bg-no-repeat mobile:py-[30px] mobile:px-[20px] computer:py-[40px] computer:px-[70px]  bg-cover">
               <div className="">
                 <button className="text-[16px] font-display font-bold text-[#FFF] py-[7px] px-[26px] rounded-[6px] bg-[#629D23] mb-[25px]">
                   Weekend Discount
@@ -71,7 +71,7 @@ const Page4 = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[url(/04.jpg)] w-full mobile:h-[300px] computer:h-[400px] bg-no-repeat mobile:py-[30px] mobile:px-[20px] computer:py-[40px] computer:px-[70px]  bg-cover">
+            <div className="bg-[url(/04.jpg)] w-full mobile:h-[300px] tablet:h-[400px] laptop:h-[400px] computer:h-[400px] bg-no-repeat mobile:py-[30px] mobile:px-[20px] computer:py-[40px] computer:px-[70px]  bg-cover">
               <div className="">
                 <button className="text-[16px] font-display font-bold text-[#FFF] py-[7px] px-[26px] rounded-[6px] bg-[#629D23] mb-[25px]">
                   Weekend Discount

@@ -31,11 +31,11 @@ const Page2 = () => {
 
   return (
     <>
-      <section className="bg-[#dbe2e9]/30 pt-[60px] mobile:pb-0 computer:pb-[60px]">
+      <section className="bg-[#dbe2e9]/30 pt-[60px] mobile:pb-[25px] tablet:pb-[25px] laptop:pb-[30px] computer:pb-[60px]">
         <Container>
           <div className="bg-white rounded-[8px] mobile:p-[15px] computer:p-[30px] ">
             <div className="flex items-center justify-between border-b border-black/20 pb-[30px]">
-              <h4 className="mobile:text-[24px] computer:text-[30px] font-display leading-1.5 font-bold text-[#2C3C28] ">
+              <h4 className="mobile:text-[20px] tablet:text-[24px] laptop:text-[26px] computer:text-[30px] font-display leading-1.5 font-bold text-[#2C3C28] ">
                 Featured Categories
               </h4>
               <span className="flex items-center gap-3">
@@ -60,11 +60,19 @@ const Page2 = () => {
                   prevEl: '.swiper-button-prev-custom',
                 }}
                 breakpoints={{
-                  0: {
+                  320: {
+                    slidesPerView: 2,
+                    spaceBetween: 16,
+                  },
+                  420: {
                     slidesPerView: 3,
                     spaceBetween: 6,
                   },
-                  768: {
+                  620: {
+                    slidesPerView: 4,
+                    spaceBetween: 10,
+                  },
+                  720: {
                     slidesPerView: 5,
                     spaceBetween: 10,
                   },
@@ -89,10 +97,10 @@ const Page2 = () => {
                               src={cat.image || 'ww05.jpg'}
                               alt="Organic Vegetable"
                             />
-                            <h3 className="text-[16px] h-[22px] font-bold font-display text-[#2C3C28] text-center mb-[8px] ">
+                            <h3 className="text-[16px] computer:h-[22px] tablet:h-[35px] mobile:h-[35px] laptop:h-[35px]  leading-none font-bold font-display text-[#2C3C28] text-center mb-[8px] ">
                               {cat.name}
                             </h3>
-                            <p className="text-[#629D23] h-[22px] text-center">
+                            <p className="text-[#629D23] computer:h-[22px] tablet:h-[35px] mobile:h-[35px] laptop:h-[35px] text-center">
                               {cat.totalProducts} ITEMS
                             </p>
                           </div>

@@ -61,6 +61,11 @@ const Checkout = () => {
       if (!name || !email || !address || !city || !phone) {
         enqueueSnackbar('Please fill all the fields', { variant: 'error' });
         return;
+      } else if (phone.length !== 11) {
+        enqueueSnackbar('Please enter a valid phone number', {
+          variant: 'error',
+        });
+        return;
       } else if (!Selectpayment) {
         enqueueSnackbar('Please select a payment method', { variant: 'error' });
         return;

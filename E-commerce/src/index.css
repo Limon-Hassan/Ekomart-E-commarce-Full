@@ -9,12 +9,14 @@
 
 @theme {
   --breakpoint-mobile: 20rem;
+  --breakpoint-tablet: 38.75rem;
+  --breakpoint-laptop: 64rem;
   --breakpoint-computer: 100rem;
 }
 
 .truncate-html {
   display: -webkit-box;
-  --webkit-line-clamp: 4;
+  --webkit-line-clamp: 1;
   --webkit-box-orient: vertical;
   text-overflow: ellipsis;
 }

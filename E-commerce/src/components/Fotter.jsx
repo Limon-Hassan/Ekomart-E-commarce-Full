@@ -4,7 +4,7 @@ import Container from '../Container';
 const Fotter = () => {
   return (
     <>
-      <section className="relative bg-[#F3F4F6] mobile:pt-[40px] computer:pt-[80px]">
+      <section className="relative bg-[#F3F4F6] mobile:pt-[40px] tablet:pt-[60px] laptop:pt-[80px] computer:pt-[80px]">
         <div className="relative w-full my-10 border-t-2 border-dashed border-black/30 after:content-['Finishing'] after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-[#F3F4F6] after:px-4 after:text-[#000] after:font-semibold"></div>
         <Container>
           <div className="computer:flex computer:flex-row mobile:flex mobile:flex-wrap items-center justify-between border-b border-[#6E777D]/30">
@@ -167,7 +167,7 @@ const Fotter = () => {
                 Subscribe to the mailing list to receive updates one the new
                 arrivals and other discounts
               </p>
-              <div class="relative w-[350px] h-[50px] mb-[20px]">
+              <div class="relative mobile:w-auto w-[350px] h-[50px] mb-[20px]">
                 <input
                   type="text"
                   class="w-full h-full bg-white placeholder:text-slate-400 text-slate-700 placeholder:font-display font-display text-[18px] border border-slate-300 outline-[#629D23] rounded-md pl-3 pr-[140px] py-2 transition duration-300 ease-in-out focus:border-[#629D23] "

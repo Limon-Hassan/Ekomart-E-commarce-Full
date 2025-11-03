@@ -6,11 +6,11 @@ import Page6 from './Page6';
 const Page5 = () => {
   return (
     <>
-      <section className="bg-[#dbe2e9]/30 mobile:pb-[25px] computer:pb-[50px] mobile:pt-9 computer:pt-[60px]">
+      <section className="bg-[#dbe2e9]/30 mobile:pt-[20px] tablet:pt-[60px] laptop:pt-[60px] computer:pt-[60px]">
         <Container>
           <div className="bg-white">
-            <div className="computer:flex computer:flex-row mobile:flex mobile:flex-wrap mobile:justify-normal  items-center computer:justify-between bg-[#629D23] rounded-t-lg mobile:py-[26px] mobile:px-[12px] computer:py-[20px] computer:px-[30px]">
-              <h3 className="mobile:text-[20px] computer:text-[24px] font-display font-semibold leading-1.5 text-[#fff]">
+            <div className="computer:flex computer:flex-row mobile:flex mobile:flex-wrap mobile:justify-normal tablet:flex tablet:flex-row tablet:justify-between laptop:flex laptop:flex-row laptop:justify-between items-center computer:justify-between bg-[#629D23] rounded-t-lg mobile:py-[26px] mobile:px-[12px] computer:py-[20px] computer:px-[30px]">
+              <h3 className="mobile:text-[18px] tablet:text-[24px] laptop:text-[24px] computer:text-[24px] font-display font-semibold leading-1.5 text-[#fff]">
                 Hand Picked Products for 10% Offer
               </h3>
 
@@ -18,7 +18,7 @@ const Page5 = () => {
                 <TimeForSale deathline={'2025-12-31T12:00:00'} />
               </div>
             </div>
-            <div className="bg-white flex items-center flex-wrap gap-[30px] mobile:p-[12px] computer:p-[30px]">
+            <div className="bg-white grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-[20px]">
               <div className="computer:flex computer:flex-row mobile:flex mobile:flex-wrap group items-center border border-[#e2e2e2] bg-[#FFFFFF] p-[15px] rounded-[6px] gap-[18px] cursor-pointer">
                 <div className="mobile:w-full mobile:h-[180px] computer:w-[230px] computer:h-[220px] flex items-center justify-center border border-[#eaeaea] rounded-[6px]">
                   <img

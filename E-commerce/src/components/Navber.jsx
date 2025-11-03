@@ -184,10 +184,10 @@ const Navber = () => {
 
   return (
     <>
-      <nav className="bg-white mobile:py-0 tablet:py-0 laptop:py-0 computer:py-8">
+      <nav className="bg-white mobile:py-2.5 tablet:py-3.5 laptop:py-5 computer:py-8">
         <Container>
-          <div className="flex mobile:flex-wrap relative justify-between items-center">
-            <div className="flex items-center mobile:gap-[15px] computer:gap-[45px]">
+          <div className="computer:flex computer:flex-nowrap mobile:flex mobile:flex-wrap tablet:flex tablet:flex-wrap laptop:flex laptop:flex-nowrap relative justify-between items-center">
+            <div className="flex items-center mobile:gap-[15px] tablet:gap-[20px] laptop:gap-[30px] computer:gap-[45px]">
               <button
                 onClick={() => setActive(prev => !prev)}
                 aria-expanded={active}
@@ -202,13 +202,13 @@ const Navber = () => {
               </button>
               <a href="/">
                 <img
-                  className="mobile:w-[120px] computer:w-auto"
+                  className="mobile:w-[120px] tablet:w-[130px] laptop:w-auto  computer:w-auto"
                   src="logo-01.svg"
                   alt=""
                 />
               </a>
-              <div className="computer:flex mobile:hidden">
-                <div className="text-2xl px-[16px] py-[8px]  border border-[#e2e2e2] rounded-l-[5px]">
+              <div className="computer:flex tablet:hidden laptop:hidden mobile:hidden">
+                <div className="text-2xl computer:px-[16px] laptop:px-[10px] py-[8px] border border-[#e2e2e2] rounded-l-[5px]">
                   <i class="fa-thin fa-location-dot"></i>
                 </div>
                 <div className=" border border-[#e2e2e2] rounded-r-[5px] px-[16px] py-[8px]">
@@ -223,12 +223,19 @@ const Navber = () => {
                   </a>
                 </div>
               </div>
-              <div class="relative mobile:hidden computer:block w-[673px] h-[60px]">
+              <div
+                class="relative mobile:hidden tablet:hidden laptop:block computer:block h-[60px]"
+                style={{
+                  width: '43vw',
+                  maxWidth: '645px',
+                  minWidth: '300px',
+                }}
+              >
                 <input
                   value={search}
                   onChange={handleSearch}
                   type="search"
-                  className="w-full h-full bg-slate-400/20 placeholder:text-slate-400 text-slate-700 placeholder:font-display font-display text-[18px] border border-slate-300 outline-[#629D23] rounded-md pl-3 pr-[115px] py-2 transition duration-300 ease-in-out focus:border-[#629D23]  shadow-sm focus:shadow"
+                  className="w-full h-full bg-slate-400/20 placeholder:text-slate-400 text-slate-700 placeholder:font-display font-display text-[18px] border border-slate-300 outline-[#629D23] rounded-md pl-3 pr-[115px] py-2 transition duration-300 ease-in-out focus:border-[#629D23] shadow-sm focus:shadow"
                   placeholder="Search for products, categories or brands"
                 />
                 {suggestions.length > 0 && (
@@ -239,12 +246,13 @@ const Navber = () => {
                         className="flex items-center gap-2 px-3 py-2 hover:bg-gray-200 cursor-pointer"
                         onClick={() => handleSuggestionClick(s.name)}
                       >
+                        <i class="fa-light fa-magnifying-glass"></i>
                         <img
                           src={s.photo}
                           alt={s.name}
                           className="w-10 h-10 object-cover rounded"
                         />
-                        <span className=" text-[16px] truncate mobile:w-[300px] tablet:w-[550px] laptop:w-[550px] computer:w-[550px]">
+                        <span className=" text-[16px] truncate font-display laptop:w-[550px] computer:w-[550px]">
                           {s.name}
                         </span>
                       </li>
@@ -260,36 +268,45 @@ const Navber = () => {
                 </button>
               </div>
             </div>
-            <div className="flex mobile:gap-[10px] computer:gap-5 items-center">
+            <div className="flex mobile:gap-[10px] tablet:gap-4 laptop:gap-4 computer:gap-5 items-center">
               <a
                 href="/account"
-                className="mobile:text-[16px] computer:text-[18px] font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 mobile:py-[10px] mobile:px-[5px] computer:py-[12px] computer:px-[28px] text-black hover:text-white  cursor-pointer"
+                className=" mobile:hidden tablet:block laptop:hidden computer:block tablet:text-[16px] laptop:text-[16px] computer:text-[18px] font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 computer:py-[12px] tablet:py-[12px] laptop:py-[12px] computer:px-[28px] tablet:px-[28px] laptop:px-[28px] text-black hover:text-white cursor-pointer"
               >
                 <span className="mr-[8px]">
                   <i class="fa-light fa-user"></i>
                 </span>
                 Account
               </a>
-              <button className="text-[18px] mobile:hidden computer:block font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 py-[12px] px-[28px] text-black hover:text-white  cursor-pointer">
+              <a
+                href="/account"
+                className="mobile:text-[16px] laptop:text-[18px] mobile:block tablet:hidden laptop:block computer:hidden font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 mobile:py-[10px] laptop:py-[12px] mobile:px-[5px] laptop:px-[28px] text-black hover:text-white cursor-pointer"
+              >
+                <i class="fa-light fa-user"></i>
+              </a>
+              <button className="text-[18px] mobile:hidden tablet:hidden laptop:hidden computer:block font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 py-[12px] px-[28px] text-black hover:text-white  cursor-pointer">
                 <span className="mr-[8px]">
                   <i class="fa-light fa-heart"></i>
                 </span>
                 Wishlist
               </button>
+              <button className="text-[18px] mobile:hidden tablet:hidden laptop:block computer:hidden font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 py-[12px] px-[28px] text-black hover:text-white cursor-pointer">
+                <i class="fa-light fa-heart"></i>
+              </button>
               <a
                 href="/Cart"
-                className="relative mobile:text-[16px] computer:text-[18px] font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 mobile:py-[10px] mobile:px-[5px] computer:py-[12px] computer:px-[28px] text-black hover:text-white  cursor-pointer"
+                className="relative mobile:text-[16px] computer:text-[18px] tablet:text-[16px] laptop:text-[16px] font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 mobile:py-[10px] mobile:px-[5px] computer:py-[12px] tablet:py-[12px] laptop:py-[12px] computer:px-[28px] tablet:px-[28px] laptop:px-[28px] text-black hover:text-white cursor-pointer"
               >
                 <span className="mr-[8px]">
                   <i class="fa-light fa-cart-shopping"></i>
                 </span>
                 Cart
-                <span className="absolute mobile:top-0 computer:top-[4px] mobile:right-[50px] computer:right-[62px] bg-[#629D23] text-white rounded-full w-[24px] flex justify-center items-center h-[24px] text-sm ">
+                <span className="absolute mobile:top-0 target:top-0 laptop:top-0 computer:top-[4px] mobile:right-[50px] tablet:right-[50px] laptop:right-[55px] computer:right-[62px] bg-[#629D23] text-white rounded-full w-[24px] flex justify-center items-center h-[24px] text-sm ">
                   {countCart}
                 </span>
               </a>
             </div>
-            <div class="relative  mobile:w-full mobile:h-[50px] computer:hidden mt-2.5">
+            <div class="relative  mobile:w-full mobile:h-[50px] tablet:w-full tablet:h-[50px] laptop:hidden computer:hidden mt-2.5">
               <input
                 value={search}
                 onChange={handleSearch}
@@ -334,7 +351,7 @@ const Navber = () => {
 
             <h3
               onClick={() => setActive(false)}
-              className="fixed top-[20px] computer:hidden right-[46px] text-white text-3xl z-[60]"
+              className="fixed mobile:top-[50px] tablet:top-[80px] laptop:hidden computer:hidden mobile:right-[46px] tablet:right-[165px] text-white text-3xl z-[60]"
             >
               <i class="fa-solid fa-xmark "></i>
             </h3>
@@ -343,7 +360,7 @@ const Navber = () => {
 
         <div
           id="mobile-menu"
-          className={`fixed top-0 left-0 z-50 w-[300px] h-screen bg-white transform origin-left transition-all duration-500 ease-in-out overflow-y-auto overflow-x-hidden ${
+          className={`fixed top-0 left-0 z-50 mobile:w-[300px] tablet:w-[400px] h-screen bg-white transform origin-left transition-all duration-500 ease-in-out overflow-y-auto overflow-x-hidden ${
             active ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
           }`}
         >
