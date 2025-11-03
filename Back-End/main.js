@@ -18,7 +18,7 @@ app.use(
   cors({
     origin: [
       'http://localhost:5173',
-      'https://evato-e-commarce-full.onrender.com',
+      'https://evato-e-commerce-limon.onrender.com',
       'https://evato-e-commerce.onrender.com',
     ],
     credentials: true,
