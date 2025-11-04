@@ -32,9 +32,9 @@ const PaymentSuccessfull = () => {
                 Thank you for your purchase.
               </p>
 
-              <div className="p-6 mb-8 rounded-lg bg-blue-50">
+              <div className="mobile:hidden tablet:block laptop:block computer:block p-6 mb-8 rounded-lg bg-blue-50">
                 <p className="text-lg font-medium text-blue-700">
-                  Your tool{' '}
+                  Your tool
                   <span className="font-bold">"http://example.com"</span>
                   will be listed shortly.
                 </p>

@@ -4,8 +4,11 @@ import CheckBox from './CheckBox';
 import PaymentStripe from './PaymentStripe';
 import api from '../Api/axios';
 import { useSnackbar } from 'notistack';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
   let { enqueueSnackbar } = useSnackbar();
   let [Selectpayment, setSelectpayment] = useState(null);
   let [SelectpaymentStipe, setSelectpaymentStipe] = useState(false);
@@ -32,7 +35,7 @@ const Checkout = () => {
         console.log(error);
         let backendMsg = error.response?.data?.message || ' Please login.!';
         if (backendMsg === 'No token found. Please login.') {
-          window.location.href = '/login';
+          navigate('/login', { state: { from: location.pathname } });
         }
       }
     }
@@ -49,7 +52,7 @@ const Checkout = () => {
         console.log(error);
         let backendMsg = error.response?.data?.message || ' Please login.!';
         if (backendMsg === 'No token found. Please login.') {
-          window.location.href = '/login';
+          navigate('/login', { state: { from: location.pathname } });
         }
       }
     }
@@ -100,14 +103,16 @@ const Checkout = () => {
           localStorage.removeItem('cart');
           window.dispatchEvent(new Event('storage'));
           enqueueSnackbar('Order placed successfully!', { variant: 'success' });
-          window.location.href = `/success/${orderID}`;
+          setTimeout(() => {
+            window.location.href = `/success/${orderID}`;
+          }, 3000);
         }
       }
     } catch (error) {
       console.log(error);
       let backendMsg = error.response?.data?.msg || 'Please login.';
       if (backendMsg === 'No token found. Please login.') {
-        window.location.href = '/login';
+        navigate('/login', { state: { from: location.pathname } });
       }
     }
   };
@@ -328,8 +333,18 @@ const Checkout = () => {
               orderId={orderID}
               amount={summery.totalPrice * 100}
               onSuccess={() => {
+                setCart([]);
+                setSummeryData({});
+                setName('');
+                setEmail('');
+                setAddress('');
+                setCity('');
+                setPhone('');
                 localStorage.removeItem('cart');
-                window.location.href = `/success/${orderID}`;
+                window.dispatchEvent(new Event('storage'));
+                setTimeout(() => {
+                  window.location.href = `/success/${orderID}`;
+                }, 3000);
               }}
             ></PaymentStripe>
           ) : null}

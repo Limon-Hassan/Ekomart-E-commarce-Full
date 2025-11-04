@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 
 const Pegination = ({ active, setActive, totalPages }) => {
   const next = () => {
+    window.scrollTo(0, 0);
     if (active < totalPages) setActive(active + 1);
   };
 
   const prev = () => {
+    window.scrollTo(0, 0);
     if (active > 1) setActive(active - 1);
   };
   return (

@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import api from '../Api/axios';
 import { useSnackbar } from 'notistack';
+import { Circles } from 'react-loader-spinner';
 
 function GoogleRedirect() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from || '/';
   let { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
@@ -13,13 +16,13 @@ function GoogleRedirect() {
         const response = await api.get('user/me', {
           withCredentials: true,
         });
-       
+
         if (response.data.user) {
           localStorage.setItem(
             'auth-Info',
             JSON.stringify({ user: response.data.user })
           );
-          navigate('/');
+          navigate(from, { replace: true });
         } else {
           navigate('/login');
         }
@@ -36,8 +39,17 @@ function GoogleRedirect() {
   }, [navigate]);
 
   return (
-    <div className="py-[200px] text-black font-display font-bold text-[30px] flex justify-center items-center">
-      Logging in with Google...
+    <div className="flex items-center justify-center w-full h-screen mx-auto">
+      <Circles
+        className="flex items-center justify-center mx-auto"
+        height="80"
+        width="80"
+        color="#4fa94d"
+        ariaLabel="circles-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+      />
     </div>
   );
 }

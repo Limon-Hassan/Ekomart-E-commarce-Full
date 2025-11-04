@@ -4,8 +4,11 @@ import api from '../Api/axios';
 import { useSnackbar } from 'notistack';
 import { format } from 'date-fns';
 import { SocketContext } from '../socket/SocketContext';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const CustomerReviews = ({ product }) => {
+  let navigate = useNavigate();
+  let location = useLocation();
   const socket = useContext(SocketContext);
   let [toggleShow, settoggleShow] = useState(false);
   const [rating, setRating] = useState(0);
@@ -36,7 +39,7 @@ const CustomerReviews = ({ product }) => {
       console.error(error);
       let backendMsg = error.response?.data?.message || 'Please login !';
       if (backendMsg === 'No token found. Please login.') {
-        window.location.href = '/login';
+        navigate('/login', { state: { from: location.pathname } });
         enqueueSnackbar(backendMsg, { variant: 'error' });
       }
     } finally {

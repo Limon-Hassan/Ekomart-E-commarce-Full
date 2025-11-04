@@ -61,9 +61,9 @@ const Registration = () => {
       <section className="bg-[#F3F4F6] py-[60px]">
         <Container>
           <div>
-            <div className="mobile:w-full computer:max-w-[800px] rounded-[20px] bg-white text-center mx-auto mobile:py-[30px] mobile:px-[20px] computer:py-[100px] computer:px-[150px]">
+            <div className="mobile:w-full computer:max-w-[800px] laptop:max-w-[800px] rounded-[20px] bg-white text-center mx-auto mobile:py-[30px] mobile:px-[20px] computer:py-[100px] computer:px-[150px]">
               <img className="max-w-[57px] mx-auto" src="fav.png" alt="logo" />
-              <h2 className="text-[26px] font-display font-bold leading-[56px] mb-[20px] text-[#2C3C28]">
+              <h2 className="text-[26px] mobile:text-[25px] tablet:text-[26px] computer:text-[26px] laptop:text-[26px] font-display font-bold leading-[56px] mb-[20px] text-[#2C3C28]">
                 Register Into Your Account
               </h2>
               <div className="input-wapper mobile:w-auto computer:w-[500px] h-[50px] text-left mb-[60px]">
@@ -124,7 +124,7 @@ const Registration = () => {
               <button
                 onClick={handleSubmit}
                 disabled={loading}
-                className="text-[16px] mobile:w-full computer:w-[500px] font-bold font-display text-[#fff] bg-[#629D23] px-[25px] py-[14px] rounded-[6px] mb-[30px] cursor-pointer"
+                className="text-[16px] mobile:w-full computer:w-[500px] laptop:w-[500px] font-bold font-display text-[#fff] bg-[#629D23] px-[25px] py-[14px] rounded-[6px] mb-[30px] cursor-pointer"
               >
                 {loading ? 'Creating Account...' : 'Register Account'}
               </button>
@@ -133,7 +133,7 @@ const Registration = () => {
                   window.location.href =
                     'https://evato-e-commerce.onrender.com/api/v2/user/google';
                 }}
-                className="text-[16px] mobile:w-full computer:w-[500px] font-bold font-display text-[#fff] bg-[#629D23] px-[25px] py-[14px] rounded-[6px] mb-[30px] cursor-pointer"
+                className="text-[16px] mobile:w-full computer:w-[500px] laptop:w-[500px] font-bold font-display text-[#fff] bg-[#629D23] px-[25px] py-[14px] rounded-[6px] mb-[30px] cursor-pointer"
               >
                 Register with
                 <span className="ml-[12px]">

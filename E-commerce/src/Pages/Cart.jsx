@@ -3,8 +3,11 @@ import Container from '../Container';
 import api from '../Api/axios';
 import { useSnackbar } from 'notistack';
 import socket from '../socket/socket';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Cart = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   let { enqueueSnackbar } = useSnackbar();
   let [cartProduct, setCartProduct] = useState([]);
   let [summeryData, setSummeryData] = useState([]);
@@ -13,7 +16,7 @@ const Cart = () => {
     try {
       let authInfo = localStorage.getItem('auth-Info');
       if (!authInfo) {
-        window.location.href = '/login';
+        navigate('/login', { state: { from: location.pathname } });
         return;
       }
       let userData = JSON.parse(authInfo);
@@ -25,10 +28,11 @@ const Cart = () => {
       console.log(error);
       let backendMsg = error.response?.data?.message || ' Please login.!';
       if (backendMsg === 'No token found. Please login.') {
-        window.location.href = '/login';
+        navigate('/login', { state: { from: location.pathname } });
       }
     }
   }
+
   useEffect(() => {
     fetchCart();
   }, []);
@@ -92,7 +96,13 @@ const Cart = () => {
   async function fetSummery() {
     try {
       if (!cartProduct.length === 0) return;
-      let id = JSON.parse(localStorage.getItem('auth-Info')).user.id;
+      let authInfo = localStorage.getItem('auth-Info');
+      if (!authInfo) {
+        navigate('/login', { state: { from: location.pathname } });
+        return;
+      }
+      let userData = JSON.parse(authInfo);
+      let id = userData?.user?.id;
       let response = await api.get(`Cart/CartSummery/${id}`);
       setSummeryData(response.data);
     } catch (error) {
@@ -102,7 +112,7 @@ const Cart = () => {
       console.log(error);
       let backendMsg = error.response?.data?.message || ' Please login.!';
       if (backendMsg === 'No token found. Please login.') {
-        window.location.href = '/login';
+        navigate('/login', { state: { from: location.pathname } });
       }
     }
   }
@@ -131,7 +141,7 @@ const Cart = () => {
       console.log(error);
       let backendMsg = error.response?.data?.message || ' Please login.!';
       if (backendMsg === 'No token found. Please login.') {
-        window.location.href = '/login';
+        navigate('/login', { state: { from: location.pathname } });
       }
     }
   };
@@ -172,7 +182,7 @@ const Cart = () => {
       console.log(error);
       let backendMsg = error.response?.data?.message || ' Please login.!';
       if (backendMsg === 'No token found. Please login.') {
-        window.location.href = '/login';
+        navigate('/login', { state: { from: location.pathname } });
       }
     }
   };
@@ -277,20 +287,25 @@ const Cart = () => {
                         </div>
                         <div
                           key={indx}
-                          className="mobile:flex tablet:flex gap-[20px] border-b border-[#e2e2e2] py-5 computer:hidden laptop:hidden"
+                          className="mobile:flex tablet:flex gap-[20px] border-b border-[#e2e2e2] py-5 mobile:px-0 tablet:px-5 computer:hidden laptop:hidden"
                         >
-                          <div className="w-[120px] h-[100px] relative">
+                          <div className="relative">
                             <span class="absolute top-0 left-0 flex h-6 w-6 items-center justify-center rounded-full border bg-white text-sm font-medium text-gray-500 shadow sm:-top-2 sm:-right-2">
                               {item.quantity}
                             </span>
                             <img
+                              class="h-24 w-24 max-w-full rounded-lg object-cover"
+                              src={item.product?.photo[0]}
+                              alt=""
+                            />
+                            {/* <img
                               className="w-full h-full rounded-md"
                               src={item.product.photo?.[0] || '01.jpg'}
                               alt="lengquage"
-                            />
+                            /> */}
                           </div>
                           <div>
-                            <h4 className="wrap-break-word text-[16px] font-display font-bold text-[#2C3C28] line-clamp-2 text-ellipsis overflow-hidden h-[50px] w-[240px]">
+                            <h4 className="wrap-break-word text-[16px] font-display font-bold text-[#2C3C28] line-clamp-2 text-ellipsis overflow-hidden h-[50px] mobile:w-[170px] tablet:w-[240px]">
                               {item.product.name}
                             </h4>
                             <h4 className="text-[16px] font-display font-bold text-[#2C3C28] h-[22px]">
@@ -338,25 +353,25 @@ const Cart = () => {
                   )}
                 </div>
 
-                <div className="mobile:py-[20px] mobile:px-[10px] computer:py-[30px] computer:px-[30px] computer:flex mobile:flex-none items-center justify-between">
-                  <div className=" mobile:flex-none computer:flex items-center gap-[20px]">
+                <div className="mobile:py-[20px] mobile:px-[10px] computer:py-[30px] computer:px-[30px] computer:flex tablet:flex-none laptop:flex mobile:flex-none items-center justify-between">
+                  <div className=" mobile:flex-none tablet:flex-none laptop:flex computer:flex items-center gap-[20px]">
                     <input
-                      className="h-[50px] font-medium text-[#6E777D] bg-[#F3F4F6] rounded-[6px] mobile:w-full computer:w-[290px] p-[15px]  focus:outline-[#629D23]"
+                      className="h-[50px] font-medium text-[#6E777D] bg-[#F3F4F6] rounded-[6px] mobile:w-full computer:w-[290px] tablet:w-full laptop:w-[290px] p-[15px]  focus:outline-[#629D23]"
                       type="text"
                       placeholder="Apply Coupon..."
                     />
-                    <button className="mobile:hidden computer:block text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] px-[28px] py-[10px] rounded-[6px] cursor-pointer">
+                    <button className="mobile:hidden tablet:hidden laptop:block computer:block text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] mobile:px-[14px] computer:px-[28px] tablet:px-[28px] laptop:px-[28px] py-[10px] rounded-[6px] cursor-pointer">
                       Apply Coupon
                     </button>
                   </div>
-                  <div className="mobile:flex mobile:items-center mobile:justify-between computer:flex-none mobile:mt-5 computer:mt-0">
-                    <button className="computer:hidden mobile:block text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] px-[28px] py-[10px] rounded-[6px] cursor-pointer">
+                  <div className="mobile:flex mobile:items-center mobile:justify-between computer:flex-none tablet:flex laptop:flex-none mobile:mt-5 computer:mt-0 tablet:mt-5 laptop:mt-0">
+                    <button className="computer:hidden laptop:hidden tablet:block mobile:block text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] mobile:px-[14px] computer:px-[28px] tablet:px-[28px] laptop:px-[28px] py-[10px] rounded-[6px] cursor-pointer">
                       Apply Coupon
                     </button>
 
                     <button
                       onClick={() => clearCart('clear')}
-                      className="text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] px-[28px] py-[10px] rounded-[6px] cursor-pointer"
+                      className="text-[16px] font-bold font-display text-[#FFF] bg-[#629D23] mobile:px-[14px] computer:px-[28px] tablet:px-[28px] laptop:px-[28px] py-[10px] rounded-[6px] cursor-pointer"
                     >
                       Clear All Carts
                     </button>

@@ -131,7 +131,7 @@ const Shop = () => {
     <>
       <section>
         <Container>
-          <div className="mobile:flex computer:hidden gap-[30px] overflow-x-scroll overflow-hidden shadow-md pb-[20px] relative pt-[10px]">
+          <div className="mobile:flex computer:hidden tablet:flex laptop:hidden gap-[30px] overflow-x-scroll overflow-hidden shadow-md pb-[20px] relative pt-[10px]">
             <div className="">
               <button
                 onClick={() => handleActive('a')}
@@ -184,10 +184,10 @@ const Shop = () => {
             </div>
           </div>
           <div
-            className="flex justify-between mobile:mt-[25px] computer:mt-[60px] z-0"
+            className="flex justify-between mobile:mt-[25px] computer:mt-[60px] tablet:mt-[30px] laptop:mt-[60px] z-0"
             ref={menuRef}
           >
-            <div className="w-[320px] mobile:hidden computer:block">
+            <div className="w-[320px] mobile:hidden tablet:hidden computer:block laptop:block">
               <div className="mb-[20px] border border-[#e2e2e2] rounded-[8px]">
                 <h5 className="text-[20px] font-display font-bold text-[#2C3C28] border-b border-[#e2e2e2] py-[30px] pl-[30px] pr-[20px]">
                   Widget Price Filter
@@ -266,7 +266,7 @@ const Shop = () => {
               </div>
             </div>
 
-            <div className="mobile:w-full computer:w-[1300px]">
+            <div className="mobile:w-full tablet:w-full computer:w-[1300px] laptop:w-[580px]">
               {query && (
                 <div className="flex justify-between items-center bg-[#F3F4F6] rounded-[6px] p-[15px] relative">
                   <h4>Showing {searchedProducts?.count} results</h4>
@@ -323,7 +323,7 @@ const Shop = () => {
                           <div
                             key={index}
                             onClick={() => handleProductItem(pro._id)}
-                            className=" p-[15px] w-[250px] h-[386px] bg-[#F5F6F7] rounded-[6px] mobile:hidden computer:block"
+                            className=" p-[15px] w-[250px] h-[386px] bg-[#F5F6F7] rounded-[6px] mobile:hidden tablet:hidden laptop:block computer:block"
                           >
                             <div className=" relative bg-white w-[220px] h-[190px] rounded-[6px] overflow-hidden">
                               <img
@@ -379,54 +379,106 @@ const Shop = () => {
                           </div>
                           <div
                             key={index}
-                            className="mobile:flex gap-[20px] border-b border-[#e2e2e2] py-5 computer:hidden relative"
+                            className="mobile:flex gap-[20px] border-b border-[#e2e2e2] py-5 computer:hidden laptop:hidden tablet:flex relative transition-all duration-500 ease-in-out"
                           >
                             <div
                               onClick={() => handleProductItem(pro._id)}
-                              className="w-[170px] h-[260px] flex items-center justify-center bg-[#F5F6F7]"
+                              className="flex items-center justify-center bg-[#F5F6F7] rounded-md transition-all duration-500 ease-in-out"
+                              style={{
+                                width: '40vw',
+                                maxWidth: '215px',
+                                minWidth: '165px',
+                                transition: 'all 0.5s ease-in-out',
+                              }}
                             >
                               <img
-                                className="w-[146px] h-auto rounded-md"
+                                className="rounded-md transition-all duration-500 h-auto ease-in-out"
+                                style={{
+                                  width: '10vw',
+                                  maxWidth: '200px',
+                                  minWidth: '140px',
+                                  transition: 'all 0.5s ease-in-out',
+                                }}
                                 src={pro.photo}
-                                alt="lengquage"
+                                alt="language"
                               />
                             </div>
-                            <div className="Bedge absolute top-[20px] left-0 w-[35px] ">
+
+                            <div className="Bedge absolute top-[20px] left-0 w-[35px] transition-all duration-500 ease-in-out">
                               <div
                                 className="bg-yellow-400 text-green-900 font-display font-bold text-center text-[12px] h-[55px] flex items-center justify-center
-                               [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,0_63%)]"
+                                [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,0_63%)]"
                               >
-                                25% <br></br>Off
+                                25% <br />
+                                Off
                               </div>
                             </div>
-                            <div>
+
+                            <div
+                              className="transition-all duration-500 ease-in-out"
+                              style={{
+                                width: '40vw',
+                                maxWidth: '620px',
+                                minWidth: '130px',
+                                transition: 'all 0.5s ease-in-out',
+                              }}
+                            >
                               <h4
                                 onClick={() => handleProductItem(pro._id)}
-                                className="wrap-break-word text-[16px] font-display font-bold text-[#2C3C28] line-clamp-4 text-ellipsis overflow-hidden h-[140px] w-[200px]"
+                                className="wrap-break-word font-display font-bold text-[#2C3C28] line-clamp-4 text-ellipsis overflow-hidden transition-all duration-500 ease-in-out"
+                                style={{
+                                  fontSize: 'calc(14px + 0.3vw)',
+                                  height: 'auto',
+                                  minHeight: '95px',
+                                  maxHeight: '140px',
+                                  transition: 'all 0.5s ease-in-out',
+                                }}
                               >
                                 {pro.name}
                               </h4>
-                              {pro.stock > 1 ? (
-                                <h4 className="text-[14px] font-display font-bold text-[#4dc32f] h-[22px]">
-                                  In Stock
-                                </h4>
-                              ) : (
-                                <h4 className="text-[14px] font-display font-bold text-[#ff7424] h-[22px]">
-                                  Out of Stock
-                                </h4>
-                              )}
-                              <h4 className="text-[16px] font-display font-bold text-[#2C3C28] h-[22px]">
+
+                              <h4
+                                className={`text-[14px] font-display font-bold h-[22px] ${
+                                  pro.stock > 1
+                                    ? 'text-[#4dc32f]'
+                                    : 'text-[#ff7424]'
+                                } transition-all duration-500 ease-in-out`}
+                              >
+                                {pro.stock > 1 ? 'In Stock' : 'Out of Stock'}
+                              </h4>
+
+                              <h4 className="text-[16px] font-display font-bold text-[#2C3C28] h-[22px] transition-all duration-500 ease-in-out">
                                 product brand
                               </h4>
-                              <div className="flex items-center gap-2 h-[35px]">
-                                <h4 className="text-[20px] font-bold text-[#2C3C28] ">
+
+                              <div className="flex items-center gap-2 h-[35px] transition-all duration-500 ease-in-out">
+                                <h4
+                                  className="font-bold text-[#2C3C28]"
+                                  style={{
+                                    fontSize: 'calc(18px + 0.3vw)',
+                                  }}
+                                >
                                   ${pro.price}
                                 </h4>
-                                <h4 className="text-[16px] line-through font-bold text-slate-500 ">
+                                <h4
+                                  className="line-through font-bold text-slate-500"
+                                  style={{
+                                    fontSize: 'calc(13px + 0.3vw)',
+                                  }}
+                                >
                                   $900
                                 </h4>
                               </div>
-                              <button className="text-[18px] font-display font-semibold text-[#FFF] py-[7px] px-3 rounded-[6px] bg-[#629D23] cursor-pointer">
+
+                              <button
+                                className="font-display font-semibold text-[#FFF] rounded-[6px] bg-[#629D23] cursor-pointer transition-all duration-500 ease-in-out"
+                                style={{
+                                  fontSize: 'calc(14px + 0.4vw)',
+                                  padding:
+                                    'calc(6px + 0.2vw) calc(12px + 0.3vw)',
+                                  transition: 'all 0.4s ease-in-out',
+                                }}
+                              >
                                 ADD TO CART
                               </button>
                             </div>
@@ -438,7 +490,7 @@ const Shop = () => {
                           <div
                             key={indx}
                             onClick={() => handleProductItem(product._id)}
-                            className=" cursor-pointer p-[15px] w-[250px] h-[386px] bg-[#F5F6F7] rounded-[6px] mobile:hidden computer:block"
+                            className=" cursor-pointer p-[15px] w-[250px] h-[386px] bg-[#F5F6F7] rounded-[6px] mobile:hidden tablet:hidden laptop:block computer:block"
                           >
                             <div className=" relative bg-white w-[220px] h-[190px] rounded-[6px] overflow-hidden">
                               <img
@@ -495,56 +547,111 @@ const Shop = () => {
                               </div>
                             </div>
                           </div>
+
                           <div
                             key={indx}
-                            className="mobile:flex gap-[20px] border-b border-[#e2e2e2] py-5 computer:hidden relative"
+                            className="mobile:flex gap-[20px] border-b border-[#e2e2e2] py-5 computer:hidden laptop:hidden tablet:flex relative transition-all duration-500 ease-in-out"
                           >
                             <div
                               onClick={() => handleProductItem(product._id)}
-                              className=" w-[170px] h-[260px] flex items-center justify-center bg-[#F5F6F7]"
+                              className="flex items-center justify-center bg-[#F5F6F7] rounded-md transition-all duration-500 ease-in-out"
+                              style={{
+                                width: '40vw',
+                                maxWidth: '215px',
+                                minWidth: '165px',
+                                transition: 'all 0.5s ease-in-out',
+                              }}
                             >
                               <img
-                                className="w-[146px] h-auto rounded-md"
+                                className="rounded-md transition-all duration-500 h-auto ease-in-out"
+                                style={{
+                                  width: '10vw',
+                                  maxWidth: '200px',
+                                  minWidth: '140px',
+                                  transition: 'all 0.5s ease-in-out',
+                                }}
                                 src={product.photo}
-                                alt="lengquage"
+                                alt="language"
                               />
                             </div>
-                            <div className="Bedge absolute top-[20px] left-0 w-[35px] ">
+
+                            <div className="Bedge absolute top-[20px] left-0 w-[35px] transition-all duration-500 ease-in-out">
                               <div
                                 className="bg-yellow-400 text-green-900 font-display font-bold text-center text-[12px] h-[55px] flex items-center justify-center
-                               [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,0_63%)]"
+                                [clip-path:polygon(0%_0%,100%_0%,100%_61%,100%_100%,50%_80%,0_100%,0_63%)]"
                               >
-                                25% <br></br>Off
+                                25% <br />
+                                Off
                               </div>
                             </div>
-                            <div>
+
+                            <div
+                              className="transition-all duration-500 ease-in-out"
+                              style={{
+                                width: '40vw',
+                                maxWidth: '620px',
+                                minWidth: '130px',
+                                transition: 'all 0.5s ease-in-out',
+                              }}
+                            >
                               <h4
                                 onClick={() => handleProductItem(product._id)}
-                                className="wrap-break-word text-[16px] font-display font-bold text-[#2C3C28] line-clamp-4 text-ellipsis overflow-hidden h-[140px] w-[200px]"
+                                className="wrap-break-word font-display font-bold text-[#2C3C28] line-clamp-4 text-ellipsis overflow-hidden transition-all duration-500 ease-in-out"
+                                style={{
+                                  fontSize: 'calc(14px + 0.3vw)',
+                                  height: 'auto',
+                                  minHeight: '95px',
+                                  maxHeight: '140px',
+                                  transition: 'all 0.5s ease-in-out',
+                                }}
                               >
                                 {product.name}
                               </h4>
-                              {product.stock > 1 ? (
-                                <h4 className="text-[14px] font-display font-bold text-[#4dc32f] h-[22px]">
-                                  In Stock
-                                </h4>
-                              ) : (
-                                <h4 className="text-[14px] font-display font-bold text-[#ff7424] h-[22px]">
-                                  Out of Stock
-                                </h4>
-                              )}
-                              <h4 className="text-[16px] font-display font-bold text-[#2C3C28] h-[22px]">
+
+                              <h4
+                                className={`text-[14px] font-display font-bold h-[22px] ${
+                                  product.stock > 1
+                                    ? 'text-[#4dc32f]'
+                                    : 'text-[#ff7424]'
+                                } transition-all duration-500 ease-in-out`}
+                              >
+                                {product.stock > 1
+                                  ? 'In Stock'
+                                  : 'Out of Stock'}
+                              </h4>
+
+                              <h4 className="text-[16px] font-display font-bold text-[#2C3C28] h-[22px] transition-all duration-500 ease-in-out">
                                 product brand
                               </h4>
-                              <div className="flex items-center gap-2 h-[35px]">
-                                <h4 className="text-[20px] font-bold text-[#2C3C28] ">
+
+                              <div className="flex items-center gap-2 h-[35px] transition-all duration-500 ease-in-out">
+                                <h4
+                                  className="font-bold text-[#2C3C28]"
+                                  style={{
+                                    fontSize: 'calc(18px + 0.3vw)',
+                                  }}
+                                >
                                   ${product.price}
                                 </h4>
-                                <h4 className="text-[16px] line-through font-bold text-slate-500 ">
+                                <h4
+                                  className="line-through font-bold text-slate-500"
+                                  style={{
+                                    fontSize: 'calc(13px + 0.3vw)',
+                                  }}
+                                >
                                   $900
                                 </h4>
                               </div>
-                              <button className="text-[18px] font-display font-semibold text-[#FFF] py-[7px] px-3 rounded-[6px] bg-[#629D23] cursor-pointer">
+
+                              <button
+                                className="font-display font-semibold text-[#FFF] rounded-[6px] bg-[#629D23] cursor-pointer transition-all duration-500 ease-in-out"
+                                style={{
+                                  fontSize: 'calc(14px + 0.4vw)',
+                                  padding:
+                                    'calc(6px + 0.2vw) calc(12px + 0.3vw)',
+                                  transition: 'all 0.4s ease-in-out',
+                                }}
+                              >
                                 ADD TO CART
                               </button>
                             </div>
