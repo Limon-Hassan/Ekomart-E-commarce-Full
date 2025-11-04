@@ -62,8 +62,8 @@ const Page6 = () => {
                       spaceBetween: 10,
                     },
                     1324: {
-                      slidesPerView: 5,
-                      spaceBetween: 10,
+                      slidesPerView: 6,
+                      spaceBetween: 16,
                     },
                   }}
                 >
@@ -358,8 +358,8 @@ const Page6 = () => {
                       spaceBetween: 10,
                     },
                     1324: {
-                      slidesPerView: 5,
-                      spaceBetween: 10,
+                      slidesPerView: 6,
+                      spaceBetween: 16,
                     },
                   }}
                 >

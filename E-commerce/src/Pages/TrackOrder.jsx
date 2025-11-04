@@ -4,7 +4,7 @@ import Container from '../Container';
 const TrackOrder = () => {
   return (
     <>
-      <section className='mobile:py-[50px] computer:py-0'>
+      <section className="mobile:py-[50px] computer:py-0 tablet:py-[50px] laptop:py-0">
         <Container>
           <div>
             <h3 className="text-[30px] font-bold font-display leading-0.5 text-[#2C3C28] mb-[40px]">

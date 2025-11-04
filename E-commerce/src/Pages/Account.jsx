@@ -37,7 +37,7 @@ const Account = () => {
       <section className="mobile:py-[50px] computer:py-[200px]">
         <Container>
           <div className="flex justify-between gap-10">
-            <div className="mobile:w-full computer:w-[25%]">
+            <div className="mobile:w-full tablet:w-full laptop:w-[25%] computer:w-[25%]">
               <ul>
                 <li
                   onClick={() => handleActive('a')}
@@ -107,7 +107,7 @@ const Account = () => {
               </ul>
             </div>
 
-            <div className="mobile:w-0 mobile:hidden computer:block computer:w-[75%]">
+            <div className="mobile:hidden tablet:hidden laptop:block computer:block w-[75%]">
               {active.a && <OrderDetails />}
               {active.b && <TrackOrder />}
             </div>

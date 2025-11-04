@@ -191,7 +191,7 @@ const Cart = () => {
               </div>
 
               <div className="bg-[#FFF] border border-[#e2e2e2] py-[20px] px-[10px] rounded-[6px] ">
-                <div className="mobile:hidden computer:flex items-center justify-between py-[15px] px-[20px] border-b border-[#e2e2e2]">
+                <div className="mobile:hidden tablet:hidden laptop:flex computer:flex items-center justify-between py-[15px] px-[20px] border-b border-[#e2e2e2]">
                   <h5 className="text-[16px] font-display font-bold text-[#2C3C28]">
                     Products
                   </h5>
@@ -218,7 +218,7 @@ const Cart = () => {
                       <>
                         <div
                           key={indx}
-                          className="computer:flex mobile:hidden items-center gap-[118px] py-[30px] px-[15px] border-b border-[#e2e2e2]"
+                          className="computer:flex laptop:flex tablet:hidden mobile:hidden items-center gap-[118px] py-[30px] px-[15px] border-b border-[#e2e2e2]"
                         >
                           <div className="flex items-center gap-[25px]">
                             <span
@@ -277,7 +277,7 @@ const Cart = () => {
                         </div>
                         <div
                           key={indx}
-                          className="mobile:flex gap-[20px] border-b border-[#e2e2e2] py-5 computer:hidden"
+                          className="mobile:flex tablet:flex gap-[20px] border-b border-[#e2e2e2] py-5 computer:hidden laptop:hidden"
                         >
                           <div className="w-[120px] h-[100px] relative">
                             <span class="absolute top-0 left-0 flex h-6 w-6 items-center justify-center rounded-full border bg-white text-sm font-medium text-gray-500 shadow sm:-top-2 sm:-right-2">
