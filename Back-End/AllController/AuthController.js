@@ -171,7 +171,9 @@ async function googleLogin(req, res, next) {
       maxAge: 60 * 60 * 1000,
     });
 
-    res.redirect('https://evato-e-commerce-limon.onrender.com/google/success');
+    res.redirect(
+      'https://ekomart-e-commarce.mahammudhassanlimon.workers.dev/google/success',
+    );
   } catch (err) {
     next(err);
     return res.json({ msg: 'server error !', error: err.message });
