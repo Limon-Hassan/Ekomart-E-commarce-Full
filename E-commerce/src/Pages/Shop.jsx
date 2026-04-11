@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import api from '../Api/axios';
 import SkeletonProduct from '../components/SkeletonProduct';
 import { FaChevronDown, FaFilter, FaMinus, FaPlus } from 'react-icons/fa6';
-import { CiShoppingCart } from 'react-icons/ci';
+import { TiShoppingCart } from 'react-icons/ti';
 
 const Shop = () => {
   let [minPrice, SetminPrice] = useState(0);
@@ -373,7 +373,7 @@ const Shop = () => {
                                 <button className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white transition-all ease-in-out duration-300 flex items-center gap-2">
                                   ADD
                                   <span>
-                                    <CiShoppingCart />
+                                    <TiShoppingCart size={20} />
                                   </span>
                                 </button>
                               </div>

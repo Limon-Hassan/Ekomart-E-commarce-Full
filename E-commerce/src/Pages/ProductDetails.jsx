@@ -189,7 +189,7 @@ const ProductDetails = () => {
                   </h3>
                   <button
                     onClick={() => handleCartItem(product)}
-                    className="text-[16px] font-display font-bold text-white bg-[#629D23] px-[48px] py-[12px] rounded-[6px] cursor-pointer mb-[20px]"
+                    className="text-[16px] font-display font-bold text-white bg-[#629D23] px-[48px] py-[12px] rounded-[6px] cursor-pointer mb-[20px] flex items-center"
                   >
                     Add To Cart
                     <span className="ml-[10px] ">

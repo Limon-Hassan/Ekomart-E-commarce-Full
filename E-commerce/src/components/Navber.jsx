@@ -247,7 +247,7 @@ const Navber = () => {
                   onChange={handleSearch}
                   type="search"
                   className="w-full h-full bg-slate-400/20 placeholder:text-slate-400 text-slate-700 placeholder:font-display font-display text-[18px] border border-slate-300 outline-[#629D23] rounded-md pl-3 pr-[115px] py-2 transition duration-300 ease-in-out focus:border-[#629D23] shadow-sm focus:shadow"
-                  placeholder="Search for products, categories or brands"
+                  placeholder="🔍 Search for products, categories or brands"
                 />
                 {suggestions.length > 0 && (
                   <ul className="absolute left-0 w-full bg-white border rounded shadow mt-1 z-10">
