@@ -5,6 +5,8 @@ import { useSnackbar } from 'notistack';
 import { format } from 'date-fns';
 import { SocketContext } from '../socket/SocketContext';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { CiUser } from 'react-icons/ci';
+import { IoClose } from 'react-icons/io5';
 
 const CustomerReviews = ({ product }) => {
   let navigate = useNavigate();
@@ -339,7 +341,7 @@ const CustomerReviews = ({ product }) => {
                         <p className="text-sm font-normal text-gray-500 ">
                           {format(
                             new Date(rev.createdAt),
-                            "MMMM d yyyy 'at' HH:mm"
+                            "MMMM d yyyy 'at' HH:mm",
                           )}
                         </p>
                       </div>
@@ -410,14 +412,14 @@ const CustomerReviews = ({ product }) => {
                       <p className="text-sm font-normal text-gray-500 ml-[20px]">
                         {format(
                           new Date(rev.createdAt),
-                          "MMMM d yyyy 'at' HH:mm"
+                          "MMMM d yyyy 'at' HH:mm",
                         )}
                       </p>
                     </div>
                     <div className="tablet:w-full laptop:w-full computer:w-full flex items-center tablet:gap-0 mobile:justify-between tablet:justify-between laptop:justify-between computer:justify-between mb-2.5">
                       <div className="space-y-0.5">
                         <p className="text-base font-semibold text-gray-900 flex items-center gap-2">
-                          <i class="fa-solid fa-user"></i>
+                          <CiUser />
                           <span className="mobile:w-40 tablet:w-full laptop:w-full computer:w-full truncate">
                             {rev.user.name}
                           </span>
@@ -464,7 +466,7 @@ const CustomerReviews = ({ product }) => {
                   onClick={() => settoggleShow(false)}
                   className="text-[24px] hover:text-red-500 cursor-pointer ease-in-out duration-300"
                 >
-                  <i class="fa-solid fa-xmark"></i>
+                  <IoClose />
                 </span>
               </div>
             </div>

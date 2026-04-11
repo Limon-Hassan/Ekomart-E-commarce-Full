@@ -3,6 +3,17 @@ import Container from '../Container';
 import { Link, useNavigate } from 'react-router-dom';
 import { SocketContext } from '../socket/SocketContext';
 import api from '../Api/axios';
+import { IoLocationSharp } from 'react-icons/io5';
+import { RxCross1 } from 'react-icons/rx';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
+import { CiUser } from 'react-icons/ci';
+import { FaRegHeart } from 'react-icons/fa';
+import { TiShoppingCart } from 'react-icons/ti';
+import { IoHomeOutline } from 'react-icons/io5';
+import { FaChevronUp } from 'react-icons/fa';
+import { LuApple } from 'react-icons/lu';
+
 const Navber = () => {
   let [active, setActive] = useState(false);
   let [toggleOpen, setToggleOpen] = useState(false);
@@ -83,7 +94,7 @@ const Navber = () => {
               name: p.name,
               photo: p.photo?.[0] || [],
             }))
-            .slice(0, 8)
+            .slice(0, 8),
         );
       }
     };
@@ -134,7 +145,7 @@ const Navber = () => {
             name: p.name,
             photo: p.photo?.[0] || [],
           }))
-          .slice(0, 8)
+          .slice(0, 8),
       );
     });
 
@@ -195,21 +206,21 @@ const Navber = () => {
                 className=" mobile:block tablet:block laptop:hidden computer:hidden tablet:text-[20px] mobile:text-[20px]"
               >
                 {active ? (
-                  <i class="fa-solid fa-xmark"></i>
+                  <RxCross1 size={30} />
                 ) : (
-                  <i class="fa-solid fa-bars"></i>
+                  <RxHamburgerMenu size={30} />
                 )}
               </button>
               <a href="/">
                 <img
                   className="mobile:w-[120px] tablet:w-[130px] laptop:w-auto  computer:w-auto"
                   src="logo-01.svg"
-                  alt=""
+                  alt="logo-01.svg"
                 />
               </a>
               <div className="computer:flex tablet:hidden laptop:hidden mobile:hidden">
                 <div className="text-2xl computer:px-[16px] laptop:px-[10px] py-[8px] border border-[#e2e2e2] rounded-l-[5px]">
-                  <i class="fa-thin fa-location-dot"></i>
+                  <IoLocationSharp size={30} />
                 </div>
                 <div className=" border border-[#e2e2e2] rounded-r-[5px] px-[16px] py-[8px]">
                   <p className="text-[12px] font-display text-[#74787C]">
@@ -246,7 +257,10 @@ const Navber = () => {
                         className="flex items-center gap-2 px-3 py-2 hover:bg-gray-200 cursor-pointer"
                         onClick={() => handleSuggestionClick(s.name)}
                       >
-                        <i class="fa-light fa-magnifying-glass"></i>
+                        <FaMagnifyingGlass
+                          size={20}
+                          className="text-gray-500"
+                        />
                         <img
                           src={s.photo}
                           alt={s.name}
@@ -271,10 +285,10 @@ const Navber = () => {
             <div className="flex mobile:gap-[10px] tablet:gap-4 laptop:gap-4 computer:gap-5 items-center">
               <a
                 href="/account"
-                className=" mobile:hidden tablet:block laptop:hidden computer:block tablet:text-[16px] laptop:text-[16px] computer:text-[18px] font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 computer:py-[12px] tablet:py-[12px] laptop:py-[12px] computer:px-[28px] tablet:px-[28px] laptop:px-[28px] text-black hover:text-white cursor-pointer"
+                className=" mobile:hidden tablet:flex laptop:hidden computer:flex tablet:text-[16px] laptop:text-[16px] computer:text-[18px] font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 computer:py-[12px] tablet:py-[12px] laptop:py-[12px] computer:px-[28px] tablet:px-[28px] laptop:px-[28px] text-black hover:text-white cursor-pointer items-center"
               >
                 <span className="mr-[8px]">
-                  <i class="fa-light fa-user"></i>
+                  <CiUser size={24} />
                 </span>
                 Account
               </a>
@@ -282,23 +296,23 @@ const Navber = () => {
                 href="/account"
                 className="mobile:text-[16px] laptop:text-[18px] mobile:block tablet:hidden laptop:block computer:hidden font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 mobile:py-[10px] laptop:py-[12px] mobile:px-[5px] laptop:px-[28px] text-black hover:text-white cursor-pointer"
               >
-                <i class="fa-light fa-user"></i>
+                <CiUser size={24} />
               </a>
-              <button className="text-[18px] mobile:hidden tablet:hidden laptop:hidden computer:block font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 py-[12px] px-[28px] text-black hover:text-white  cursor-pointer">
+              <button className="text-[18px] mobile:hidden tablet:hidden laptop:hidden computer:flex font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 py-[12px] px-[28px] text-black hover:text-white cursor-pointer items-center">
                 <span className="mr-[8px]">
-                  <i class="fa-light fa-heart"></i>
+                  <FaRegHeart size={24} />
                 </span>
                 Wishlist
               </button>
               <button className="text-[18px] mobile:hidden tablet:hidden laptop:block computer:hidden font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 py-[12px] px-[28px] text-black hover:text-white cursor-pointer">
-                <i class="fa-light fa-heart"></i>
+                <FaRegHeart size={24} />
               </button>
               <a
                 href="/Cart"
-                className="relative mobile:text-[16px] computer:text-[18px] tablet:text-[16px] laptop:text-[16px] font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 mobile:py-[10px] mobile:px-[5px] computer:py-[12px] tablet:py-[12px] laptop:py-[12px] computer:px-[28px] tablet:px-[28px] laptop:px-[28px] text-black hover:text-white cursor-pointer"
+                className="relative mobile:text-[16px] computer:text-[18px] tablet:text-[16px] laptop:text-[16px] font-display font-medium border border-[#e2e2e2] rounded-[6px] bg-white hover:bg-[#2C3C28] transition-all ease-in-out duration-300 mobile:py-[10px] mobile:px-[5px] computer:py-[12px] tablet:py-[12px] laptop:py-[12px] computer:px-[28px] tablet:px-[28px] laptop:px-[28px] text-black hover:text-white cursor-pointer flex items-center"
               >
                 <span className="mr-[8px]">
-                  <i class="fa-light fa-cart-shopping"></i>
+                  <TiShoppingCart size={24} />
                 </span>
                 Cart
                 <span className="absolute mobile:top-0 target:top-0 laptop:top-0 computer:top-[4px] mobile:right-[50px] tablet:right-[50px] laptop:right-[55px] computer:right-[62px] bg-[#629D23] text-white rounded-full w-[24px] flex justify-center items-center h-[24px] text-sm ">
@@ -322,7 +336,7 @@ const Navber = () => {
                       className="flex items-center gap-2 px-3 py-2 hover:bg-gray-200 cursor-pointer"
                       onClick={() => handleSuggestionClick(s.name)}
                     >
-                      <i class="fa-light fa-magnifying-glass"></i>
+                      <FaMagnifyingGlass size={20} className="text-gray-500" />
                       <img
                         src={s.photo}
                         alt={s.name}
@@ -353,7 +367,7 @@ const Navber = () => {
               onClick={() => setActive(false)}
               className="fixed mobile:top-[50px] tablet:top-[80px] laptop:hidden computer:hidden mobile:right-[46px] tablet:right-[165px] text-white text-3xl z-[60]"
             >
-              <i class="fa-solid fa-xmark "></i>
+              <RxCross1 />
             </h3>
           </>
         )}
@@ -365,11 +379,14 @@ const Navber = () => {
           }`}
         >
           <div className="bg-[#232f3e] p-[20px]">
-            <h3 className="text-right">
-              <a href="/login" className=" text-white font-semibold">
+            <h3 className="flex items-end justify-end">
+              <a
+                href="/login"
+                className=" text-white font-semibold flex items-center"
+              >
                 sign in
                 <span className="ml-1">
-                  <i class="fa-light fa-user"></i>
+                  <CiUser size={24} />
                 </span>
               </a>
             </h3>
@@ -386,7 +403,7 @@ const Navber = () => {
           >
             EKOMART Home Page
             <span>
-              <i className="fa-solid fa-home"></i>
+              <IoHomeOutline size={24} />
             </span>
           </a>
           <div className="w-full bg-white overflow-hidden">
@@ -403,7 +420,7 @@ const Navber = () => {
                     toggleOpen ? 'rotate-180' : 'rotate-0'
                   }`}
                 >
-                  <i className="fa-solid fa-chevron-up"></i>
+                  <FaChevronUp />
                 </span>
               </li>
               <ul
@@ -412,27 +429,27 @@ const Navber = () => {
                   toggleOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <li className="p-4 text-slate-800 border-b border-slate-300 hover:bg-slate-200 transition-all duration-200">
+                <li className="p-4 text-slate-800 border-b border-slate-300 hover:bg-slate-200 transition-all duration-200 flex items-center justify-between">
                   <span className="mr-1">
-                    <i class="fa-thin fa-apple-whole"></i>
+                    <LuApple size={24} />
                   </span>
                   Fashion
                 </li>
-                <li className="p-4 text-slate-800 border-b border-slate-300 hover:bg-slate-200 transition-all duration-200">
+                <li className="p-4 text-slate-800 border-b border-slate-300 hover:bg-slate-200 transition-all duration-200 flex items-center justify-between">
                   <span className="mr-1">
-                    <i class="fa-thin fa-apple-whole"></i>
+                    <LuApple size={24} />
                   </span>
                   Electronics
                 </li>
-                <li className="p-4 text-slate-800 border-b border-slate-300 hover:bg-slate-200 transition-all duration-200">
+                <li className="p-4 text-slate-800 border-b border-slate-300 hover:bg-slate-200 transition-all duration-200 flex items-center justify-between">
                   <span className="mr-1">
-                    <i class="fa-thin fa-apple-whole"></i>
+                    <LuApple size={24} />
                   </span>
                   Beauty
                 </li>
-                <li className="p-4 text-slate-800 border-b border-slate-300 hover:bg-slate-200 transition-all duration-200">
+                <li className="p-4 text-slate-800 border-b border-slate-300 hover:bg-slate-200 transition-all duration-200 flex items-center justify-between">
                   <span className="mr-1">
-                    <i class="fa-thin fa-apple-whole"></i>
+                    <LuApple size={24} />
                   </span>
                   Home & Living
                 </li>

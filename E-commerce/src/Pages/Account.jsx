@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import Container from '../Container';
 import OrderDetails from './OrderDetails';
 import TrackOrder from './TrackOrder';
+import { FaShoppingBag } from 'react-icons/fa';
+import {
+  FaArrowRightFromBracket,
+  FaLeftRight,
+  FaTruckMoving,
+} from 'react-icons/fa6';
+import { CiUser } from 'react-icons/ci';
 
 const Account = () => {
   let [active, setActive] = useState({
@@ -45,10 +52,10 @@ const Account = () => {
                     active.a
                       ? 'bg-[#629D23] text-white'
                       : 'bg-none text-[#2C3C28]'
-                  }  border border-[#e2e2e2] rounded-[4px] mb-[10px] cursor-pointer transition-all ease-in-out duration-200 `}
+                  }  border border-[#e2e2e2] rounded-[4px] mb-[10px] cursor-pointer transition-all ease-in-out duration-200 flex items-center `}
                 >
                   <span className="mr-3">
-                    <i class="fa-light fa-bag-shopping"></i>
+                    <FaShoppingBag size={20} />
                   </span>
                   My Order
                 </li>
@@ -58,10 +65,10 @@ const Account = () => {
                     active.b
                       ? 'bg-[#629D23] text-white'
                       : 'bg-none text-[#2C3C28]'
-                  }  border border-[#e2e2e2] rounded-[4px] mb-[10px] cursor-pointer transition-all ease-in-out duration-200 `}
+                  }  border border-[#e2e2e2] rounded-[4px] mb-[10px] cursor-pointer transition-all ease-in-out duration-200 flex items-center`}
                 >
                   <span className="mr-3">
-                    <i class="fa-light fa-truck-fast"></i>
+                    <FaTruckMoving size={20} />
                   </span>
                   Track Your Order
                 </li>
@@ -71,10 +78,10 @@ const Account = () => {
                     active.c
                       ? 'bg-[#629D23] text-white'
                       : 'bg-none text-[#2C3C28]'
-                  } border border-[#e2e2e2] rounded-[4px] mb-[10px] cursor-pointer transition-all ease-in-out duration-200 `}
+                  } border border-[#e2e2e2] rounded-[4px] mb-[10px] cursor-pointer transition-all ease-in-out duration-200  flex items-center`}
                 >
                   <span className="mr-3">
-                    <i class="fa-light fa-user"></i>
+                    <CiUser size={20} />
                   </span>
                   Account Details
                 </li>
@@ -84,10 +91,10 @@ const Account = () => {
                     active.d
                       ? 'bg-[#629D23] text-white'
                       : 'bg-none text-[#2C3C28]'
-                  } border border-[#e2e2e2] rounded-[4px] mb-[10px] cursor-pointer transition-all ease-in-out duration-200 `}
+                  } border border-[#e2e2e2] rounded-[4px] mb-[10px] cursor-pointer transition-all ease-in-out duration-200 flex items-center`}
                 >
                   <span className="mr-3">
-                    <i class="fa-light fa-arrow-turn-left"></i>
+                    <FaLeftRight size={20} />
                   </span>
                   My Cancelation & Return
                 </li>
@@ -97,10 +104,10 @@ const Account = () => {
                     active.e
                       ? 'bg-[#629D23] text-white'
                       : 'bg-none text-[#2C3C28]'
-                  } border border-[#e2e2e2] rounded-[4px] mb-[10px] cursor-pointer transition-all ease-in-out duration-200 `}
+                  } border border-[#e2e2e2] rounded-[4px] mb-[10px] cursor-pointer transition-all ease-in-out duration-200 flex items-center`}
                 >
                   <span className="mr-3">
-                    <i class="fa-light fa-right-from-bracket"></i>
+                    <FaArrowRightFromBracket size={20} />
                   </span>
                   Log Out
                 </li>

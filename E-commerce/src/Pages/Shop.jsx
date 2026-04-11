@@ -4,6 +4,8 @@ import Pegination from './Pegination';
 import { useLocation, useNavigate } from 'react-router-dom';
 import api from '../Api/axios';
 import SkeletonProduct from '../components/SkeletonProduct';
+import { FaChevronDown, FaFilter, FaMinus, FaPlus } from 'react-icons/fa6';
+import { CiShoppingCart } from 'react-icons/ci';
 
 const Shop = () => {
   let [minPrice, SetminPrice] = useState(0);
@@ -120,7 +122,7 @@ const Shop = () => {
 
       window.location.href = `/productDetails/${id}/${response.data.product.name.replace(
         /\s+/g,
-        '-'
+        '-',
       )}`;
     } catch (error) {
       console.error(error);
@@ -143,7 +145,7 @@ const Shop = () => {
               >
                 Filter
                 <span className="ml-1.5">
-                  <i class="fa-solid fa-filter"></i>
+                  <FaFilter />
                 </span>
               </button>
             </div>
@@ -273,11 +275,11 @@ const Shop = () => {
 
                   <button
                     onClick={() => setOpen(prev => !prev)}
-                    className="text-[16px] font-display font-semibold text-[#FFF] bg-[#629D23] py-[8px] px-[14px] cursor-pointer rounded-[4px] "
+                    className="text-[16px] font-display font-semibold text-[#FFF] bg-[#629D23] py-[8px] px-[14px] cursor-pointer rounded-[4px] flex items-center"
                   >
                     Sort
                     <span className="ml-1.5 ">
-                      <i class="fa-solid fa-chevron-down"></i>
+                      <FaChevronDown />
                     </span>
                   </button>
                   {open && (
@@ -360,18 +362,18 @@ const Shop = () => {
                                 </div>
                                 <div className="flex items-center gap-2">
                                   <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500">
-                                    <i class="fa-solid fa-plus-large"></i>
+                                    <FaPlus />
                                   </button>
                                   <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500">
-                                    <i class="fa-solid fa-minus"></i>
+                                    <FaMinus />
                                   </button>
                                 </div>
                               </div>
                               <div>
-                                <button className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white transition-all ease-in-out duration-300">
+                                <button className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white transition-all ease-in-out duration-300 flex items-center gap-2">
                                   ADD
                                   <span>
-                                    <i class="fa-light fa-cart-shopping"></i>
+                                    <CiShoppingCart />
                                   </span>
                                 </button>
                               </div>

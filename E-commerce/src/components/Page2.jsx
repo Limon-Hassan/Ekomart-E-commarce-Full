@@ -1,7 +1,5 @@
 import { Navigation } from 'swiper/modules';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
@@ -9,6 +7,7 @@ import Container from '../Container';
 import { useEffect, useState } from 'react';
 import api from '../Api/axios';
 import SkeletonCategory from './SkeletonCategory';
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 
 const Page2 = () => {
   let [category, setCategory] = useState([]);
@@ -40,10 +39,10 @@ const Page2 = () => {
               </h4>
               <span className="flex items-center gap-3">
                 <button className="swiper-button-prev-custom bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] hover:text-white rounded-[8px] flex justify-center items-center ease-in-out duration-300 cursor-pointer">
-                  <i class="fa-regular fa-arrow-left-from-arc"></i>
+                  <MdKeyboardArrowLeft size={28} />
                 </button>
                 <button className="swiper-button-next-custom  bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] rounded-[8px]  hover:text-white flex justify-center items-center ease-in-out duration-300 cursor-pointer">
-                  <i class="fa-regular fa-arrow-right-from-arc"></i>
+                  <MdKeyboardArrowRight size={28} />
                 </button>
               </span>
             </div>

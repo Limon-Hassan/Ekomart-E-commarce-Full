@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../Container';
 import TimeForSale from './TimeForSale';
 import Page6 from './Page6';
+import { IoIosStar } from 'react-icons/io';
 
 const Page5 = () => {
   return (
@@ -15,7 +16,7 @@ const Page5 = () => {
               </h3>
 
               <div className="mobile:mt-5 computer:mt-0">
-                <TimeForSale deathline={'2025-12-31T12:00:00'} />
+                <TimeForSale deathline={'2026-10-31T12:00:00'} />
               </div>
             </div>
             <div className="bg-white grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-[20px]">
@@ -29,11 +30,11 @@ const Page5 = () => {
                 </div>
                 <div>
                   <span className="flex items-center gap-1.5">
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
                     <span className="text-[16px] font-display font-normal text-[#6E777D]">
                       (125 Reviews)
                     </span>
@@ -65,11 +66,11 @@ const Page5 = () => {
                 </div>
                 <div>
                   <span className="flex items-center gap-1.5">
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
                     <span className="text-[16px] font-display font-normal text-[#6E777D]">
                       (125 Reviews)
                     </span>
@@ -101,11 +102,11 @@ const Page5 = () => {
                 </div>
                 <div>
                   <span className="flex items-center gap-1.5">
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
+                    <IoIosStar className="text-yellow-400 text-[20px]" />
                     <span className="text-[16px] font-display font-normal text-[#6E777D]">
                       (125 Reviews)
                     </span>

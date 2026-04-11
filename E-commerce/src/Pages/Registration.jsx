@@ -4,6 +4,7 @@ import { useSnackbar } from 'notistack';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import api from '../Api/axios';
+import { FaGoogle, FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
 
 const Registration = () => {
   let [formData, setFormData] = useState({
@@ -112,11 +113,11 @@ const Registration = () => {
                 >
                   {showPassword ? (
                     <span>
-                      <i class="fa-light fa-eye"></i>
+                      <FaRegEye />
                     </span>
                   ) : (
                     <span>
-                      <i class="fa-light fa-eye-slash"></i>
+                      <FaRegEyeSlash />
                     </span>
                   )}
                 </button>
@@ -133,11 +134,12 @@ const Registration = () => {
                   window.location.href =
                     'https://evato-e-commerce.onrender.com/api/v2/user/google';
                 }}
-                className="text-[16px] mobile:w-full computer:w-[500px] laptop:w-[500px] font-bold font-display text-[#fff] bg-[#629D23] px-[25px] py-[14px] rounded-[6px] mb-[30px] cursor-pointer"
+                className="text-[16px] mobile:w-full computer:w-[500px] laptop:w-[500px] font-bold font-display text-[#fff] bg-[#629D23] px-[25px] py-[14px] rounded-[6px] mb-[30px] cursor-pointer flex items-center"
               >
                 Register with
                 <span className="ml-[12px]">
-                  <i class="fa-brands fa-google"></i> Google
+                  <FaGoogle />
+                  Google
                 </span>
               </button>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../Container';
+import { FaPlus, FaRegFolder } from 'react-icons/fa';
 
 const Page7 = () => {
   return (
@@ -19,9 +20,9 @@ const Page7 = () => {
                   alt="blog_banner"
                 />
                 <div className="bg-white border border-[#e2e2e2] py-[30px] px-[10px] rounded-b-[6px]">
-                  <p className="text-[14px] font-display font-normal text-[#6E777D] mb-[10px]">
+                  <p className="text-[14px] font-display font-normal text-[#6E777D] mb-[10px] flex items-center">
                     <span className="mr-[8px]">
-                      <i class="fa-light fa-folder"></i>
+                      <FaRegFolder size={20} />
                     </span>
                     Modern Fashion
                   </p>
@@ -29,8 +30,8 @@ const Page7 = () => {
                     Shion Fixation: Fueling Your Passion for All Things Stylish
                   </h4>
                   <div className="group flex items-center gap-2">
-                    <button className="text-[12px] transition-all font-bold text-[#FFF] py-2 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
-                      <i class="fa-solid fa-plus-large"></i>
+                    <button className="text-[12px] transition-all font-bold text-[#FFF] py-2.5 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
+                      <FaPlus size={28} />
                     </button>
                     <span className=" cursor-pointer font-display font-semibold">
                       Read Details
@@ -45,9 +46,9 @@ const Page7 = () => {
                   alt="Blog_Benner2"
                 />
                 <div className="bg-white border border-[#e2e2e2] py-[30px] px-[10px] rounded-b-[6px]">
-                  <p className="text-[14px] font-display font-normal text-[#6E777D] mb-[10px]">
+                  <p className="text-[14px] font-display font-normal text-[#6E777D] mb-[10px] flex items-center">
                     <span className="mr-[8px]">
-                      <i class="fa-light fa-folder"></i>
+                      <FaRegFolder size={20} />
                     </span>
                     Modern Fashion
                   </p>
@@ -55,8 +56,8 @@ const Page7 = () => {
                     Ashion Fixation: Fueling Your Passion for All Things Stylish
                   </h4>
                   <div className="group flex items-center gap-2">
-                    <button className="text-[12px] transition-all font-bold text-[#FFF] py-2 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
-                      <i class="fa-solid fa-plus-large"></i>
+                    <button className="text-[12px] transition-all font-bold text-[#FFF] py-2.5 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
+                      <FaPlus size={28} />
                     </button>
                     <span className=" cursor-pointer font-display font-semibold">
                       Read Details
@@ -71,9 +72,9 @@ const Page7 = () => {
                   alt="blog_benner3"
                 />
                 <div className="bg-white border border-[#e2e2e2] py-[30px] px-[10px] rounded-b-[6px]">
-                  <p className="text-[14px] font-display font-normal text-[#6E777D] mb-[10px]">
+                  <p className="text-[14px] font-display font-normal text-[#6E777D] mb-[10px] flex items-center">
                     <span className="mr-[8px]">
-                      <i class="fa-light fa-folder"></i>
+                      <FaRegFolder size={20} />
                     </span>
                     Modern Fashion
                   </p>
@@ -81,8 +82,8 @@ const Page7 = () => {
                     Fixation: Fueling Your Passion for All Things Stylish
                   </h4>
                   <div className="group flex items-center gap-2">
-                    <button className="text-[12px] transition-all font-bold text-[#FFF] py-2 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
-                      <i class="fa-solid fa-plus-large"></i>
+                    <button className="text-[12px] transition-all font-bold text-[#FFF] py-2.5 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
+                      <FaPlus size={28} />
                     </button>
                     <span className=" cursor-pointer font-display font-semibold">
                       Read Details
@@ -97,9 +98,9 @@ const Page7 = () => {
                   alt="Blog_benner4"
                 />
                 <div className="bg-white border border-[#e2e2e2] py-[30px] px-[10px] rounded-b-[6px]">
-                  <p className="text-[14px] font-display font-normal text-[#6E777D] mb-[10px]">
+                  <p className="text-[14px] font-display font-normal text-[#6E777D] mb-[10px] flex items-center">
                     <span className="mr-[8px]">
-                      <i class="fa-light fa-folder"></i>
+                      <FaRegFolder size={20} />
                     </span>
                     Modern Fashion
                   </p>
@@ -108,8 +109,8 @@ const Page7 = () => {
                     Stylish
                   </h4>
                   <div className="group flex items-center gap-2">
-                    <button className="text-[12px] transition-all font-bold text-[#FFF] py-2 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
-                      <i class="fa-solid fa-plus-large"></i>
+                    <button className="text-[12px] transition-all font-bold text-[#FFF] py-2.5 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
+                      <FaPlus size={28} />
                     </button>
                     <span className=" cursor-pointer font-display font-semibold">
                       Read Details

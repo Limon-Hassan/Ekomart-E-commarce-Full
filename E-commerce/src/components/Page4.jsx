@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '../Container';
 import Page5 from './Page5';
+import { FaPlus } from 'react-icons/fa6';
 
 const Page4 = () => {
   return (
@@ -20,8 +21,8 @@ const Page4 = () => {
                   Good Taste
                 </h4>
                 <div className="group flex items-center gap-2">
-                  <button className="text-[12px] transition-all font-bold text-[#FFF] py-2 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
-                    <i class="fa-solid fa-plus-large"></i>
+                  <button className="text-[12px] transition-all font-bold text-[#FFF] py-2.5 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
+                    <FaPlus size={28} />
                   </button>
                   <span className=" cursor-pointer font-display font-bold">
                     Shop Now
@@ -29,7 +30,7 @@ const Page4 = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[url(/02.jpg)] w-full mobile:h-[300px] tablet:h-[400px] laptop:h-[400px] computer:h-[400px] bg-no-repeat mobile:py-[30px] mobile:px-[20px] computer:py-[40px] computer:px-[70px]  bg-cover">
+            <div className="bg-[url(/02.jpg)] w-full mobile:h-[300px] tablet:h-[400px] laptop:h-[400px] computer:h-[400px] bg-no-repeat mobile:py-[30px] mobile:px-[20px] computer:py-[40px] computer:px-[70px] bg-cover">
               <div className="">
                 <button className="text-[16px] font-display font-bold text-[#FFF] py-[7px] px-[26px] rounded-[6px] bg-[#629D23] mb-[25px]">
                   Weekend Discount
@@ -41,8 +42,8 @@ const Page4 = () => {
                   Good Taste
                 </h4>
                 <div className="group flex items-center gap-2">
-                  <button className="text-[12px] transition-all font-bold text-[#FFF] py-2 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
-                    <i class="fa-solid fa-plus-large"></i>
+                  <button className="text-[12px] transition-all font-bold text-[#FFF] py-2.5 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
+                    <FaPlus size={28} />
                   </button>
                   <span className=" cursor-pointer font-display font-bold">
                     Shop Now
@@ -62,8 +63,8 @@ const Page4 = () => {
                   Good Taste
                 </h4>
                 <div className="group flex items-center gap-2">
-                  <button className="text-[12px] transition-all font-bold text-[#FFF] py-2 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
-                    <i class="fa-solid fa-plus-large"></i>
+                  <button className="text-[12px] transition-all font-bold text-[#FFF] py-2.5 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
+                    <FaPlus size={28} />
                   </button>
                   <span className=" cursor-pointer font-display font-bold">
                     Shop Now
@@ -83,8 +84,8 @@ const Page4 = () => {
                   Good Taste
                 </h4>
                 <div className="group flex items-center gap-2">
-                  <button className="text-[12px] transition-all font-bold text-[#FFF] py-2 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
-                    <i class="fa-solid fa-plus-large"></i>
+                  <button className="text-[12px] transition-all font-bold text-[#FFF] py-2.5 cursor-pointer group-hover:text-white group-hover:bg-[#1F1F25] ease-in-out duration-300 px-2.5 bg-[#629D23] rounded-full">
+                    <FaPlus size={28} />
                   </button>
                   <span className=" cursor-pointer font-display font-bold">
                     Shop Now

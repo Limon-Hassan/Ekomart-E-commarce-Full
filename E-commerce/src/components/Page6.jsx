@@ -7,6 +7,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import Container from '../Container';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { IoIosStar } from 'react-icons/io';
 
 const Page6 = () => {
   return (
@@ -21,10 +23,10 @@ const Page6 = () => {
                 </h4>
                 <span className="flex items-center gap-3">
                   <button className="swiper-button-prev-custom bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] hover:text-white rounded-[8px] flex justify-center items-center ease-in-out duration-300 cursor-pointer">
-                    <i class="fa-regular fa-arrow-left-from-arc"></i>
+                    <MdKeyboardArrowLeft size={28} />
                   </button>
                   <button className="swiper-button-next-custom  bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] rounded-[8px]  hover:text-white flex justify-center items-center ease-in-out duration-300 cursor-pointer">
-                    <i class="fa-regular fa-arrow-right-from-arc"></i>
+                    <MdKeyboardArrowRight size={28} />
                   </button>
                 </span>
               </div>
@@ -317,10 +319,10 @@ const Page6 = () => {
                 </h4>
                 <span className="flex items-center gap-3">
                   <button className="swiper-button-prev-customs bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] hover:text-white rounded-[8px] flex justify-center items-center ease-in-out duration-300 cursor-pointer">
-                    <i class="fa-regular fa-arrow-left-from-arc"></i>
+                    <MdKeyboardArrowLeft size={28} />
                   </button>
                   <button className="swiper-button-next-customs  bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] rounded-[8px] hover:text-white flex justify-center items-center ease-in-out duration-300 cursor-pointer">
-                    <i class="fa-regular fa-arrow-right-from-arc"></i>
+                    <MdKeyboardArrowRight size={28} />
                   </button>
                 </span>
               </div>
@@ -376,11 +378,11 @@ const Page6 = () => {
                         Details Profitable business makes your profit
                       </h4>
                       <span className="flex items-center gap-[4px] mt-[10px]">
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
                         <span className="text-[16px] font-display font-normal text-[#6E777D]">
                           (125 Reviews)
                         </span>
@@ -413,11 +415,11 @@ const Page6 = () => {
                         Details Profitable business makes your profit
                       </h4>
                       <span className="flex items-center gap-[4px] mt-[10px]">
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
                         <span className="text-[16px] font-display font-normal text-[#6E777D]">
                           (125 Reviews)
                         </span>
@@ -450,11 +452,11 @@ const Page6 = () => {
                         Details Profitable business makes your profit
                       </h4>
                       <span className="flex items-center gap-[4px] mt-[10px]">
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
                         <span className="text-[16px] font-display font-normal text-[#6E777D]">
                           (125 Reviews)
                         </span>
@@ -487,11 +489,11 @@ const Page6 = () => {
                         Details Profitable business makes your profit
                       </h4>
                       <span className="flex items-center gap-[4px] mt-[10px]">
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
                         <span className="text-[16px] font-display font-normal text-[#6E777D]">
                           (125 Reviews)
                         </span>
@@ -524,11 +526,11 @@ const Page6 = () => {
                         Details Profitable business makes your profit
                       </h4>
                       <span className="flex items-center gap-[4px] mt-[10px]">
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
                         <span className="text-[16px] font-display font-normal text-[#6E777D]">
                           (125 Reviews)
                         </span>
@@ -561,11 +563,11 @@ const Page6 = () => {
                         Details Profitable business makes your profit
                       </h4>
                       <span className="flex items-center gap-[4px] mt-[10px]">
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
                         <span className="text-[16px] font-display font-normal text-[#6E777D]">
                           (125 Reviews)
                         </span>
@@ -598,11 +600,11 @@ const Page6 = () => {
                         Details Profitable business makes your profit
                       </h4>
                       <span className="flex items-center gap-[4px] mt-[10px]">
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
                         <span className="text-[16px] font-display font-normal text-[#6E777D]">
                           (125 Reviews)
                         </span>
@@ -635,11 +637,11 @@ const Page6 = () => {
                         Details Profitable business makes your profit
                       </h4>
                       <span className="flex items-center gap-[4px] mt-[10px]">
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
-                        <i class="fa-solid fa-star text-[14px] text-yellow-500"></i>
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
+                        <IoIosStar className="text-yellow-400 text-[14px]" />
                         <span className="text-[16px] font-display font-normal text-[#6E777D]">
                           (125 Reviews)
                         </span>

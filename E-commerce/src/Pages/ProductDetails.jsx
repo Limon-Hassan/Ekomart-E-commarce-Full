@@ -14,6 +14,14 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import api from '../Api/axios';
 import { SocketContext } from '../socket/SocketContext';
+import { IoIosStar } from 'react-icons/io';
+import {
+  FaAngleLeft,
+  FaAngleRight,
+  FaCartShopping,
+  FaMinus,
+  FaPlus,
+} from 'react-icons/fa6';
 
 const ProductDetails = () => {
   let [buttonActive, setButtonActive] = useState({
@@ -27,7 +35,7 @@ const ProductDetails = () => {
   let location = useLocation();
   const [product, setProduct] = useState(location.state?.product || null);
   const [relatedProducts, setRelatedProducts] = useState(
-    location.state?.relatedProducts || []
+    location.state?.relatedProducts || [],
   );
 
   useEffect(() => {
@@ -98,7 +106,7 @@ const ProductDetails = () => {
 
       window.location.href = `/productDetails/${id}/${response.data.product.name.replace(
         /\s+/g,
-        '-'
+        '-',
       )}`;
     } catch (error) {
       console.error(error);
@@ -161,11 +169,11 @@ const ProductDetails = () => {
                 </div>
                 <div className="text_part">
                   <span className="flex items-center gap-1.5 mb-[20px]">
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <i class="fa-solid fa-star text-yellow-500"></i>
+                    <IoIosStar className="text-yellow-400 text-[14px]" />
+                    <IoIosStar className="text-yellow-400 text-[14px]" />
+                    <IoIosStar className="text-yellow-400 text-[14px]" />
+                    <IoIosStar className="text-yellow-400 text-[14px]" />
+                    <IoIosStar className="text-yellow-400 text-[14px]" />
                     <span className="text-[16px] font-display font-normal text-[#6E777D]">
                       ({product.Totoalreviews || 0} Reviews)
                     </span>
@@ -185,7 +193,7 @@ const ProductDetails = () => {
                   >
                     Add To Cart
                     <span className="ml-[10px] ">
-                      <i class="fa-light fa-cart-shopping"></i>
+                      <FaCartShopping />
                     </span>
                   </button>
                   <div className="mt-[20px] mb-[10px]">
@@ -273,10 +281,10 @@ const ProductDetails = () => {
                 </h4>
                 <span className="flex items-center gap-3">
                   <button className="swiper-button-prev-custom bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] hover:text-white rounded-[8px] flex justify-center items-center ease-in-out duration-300 cursor-pointer">
-                    <i class="fa-regular fa-arrow-left-from-arc"></i>
+                    <FaAngleLeft />
                   </button>
                   <button className="swiper-button-next-custom  bg-[#fff] hover:bg-[#629D23] w-[33px] h-[33px] border border-[#629D23] rounded-[8px]  hover:text-white flex justify-center items-center ease-in-out duration-300 cursor-pointer">
-                    <i class="fa-regular fa-arrow-right-from-arc"></i>
+                    <FaAngleRight />
                   </button>
                 </span>
               </div>
@@ -355,21 +363,21 @@ const ProductDetails = () => {
                             </div>
                             <div className="flex items-center gap-2">
                               <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500">
-                                <i class="fa-solid fa-plus-large"></i>
+                                <FaPlus />
                               </button>
                               <button className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500">
-                                <i class="fa-solid fa-minus"></i>
+                                <FaMinus />
                               </button>
                             </div>
                           </div>
                           <div>
                             <button
                               onClick={() => handleCartItem(item)}
-                              className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white cursor-pointer transition-all ease-in-out duration-300"
+                              className="text-[18px] font-display font-bold text-[#629D23] border border-[#629D23] py-[7px] px-3 rounded-[6px] hover:bg-[#629D23] hover:text-white cursor-pointer transition-all ease-in-out duration-300 flex items-center"
                             >
                               ADD
                               <span>
-                                <i class="fa-light fa-cart-shopping"></i>
+                                <FaCartShopping />
                               </span>
                             </button>
                           </div>

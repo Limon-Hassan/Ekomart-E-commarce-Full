@@ -4,6 +4,8 @@ import api from '../Api/axios';
 import { useSnackbar } from 'notistack';
 import socket from '../socket/socket';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { AiOutlineClose } from 'react-icons/ai';
+import { FaArrowRight, FaMinus, FaPlus } from 'react-icons/fa6';
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -44,7 +46,7 @@ const Cart = () => {
 
     const handleItemDeleted = deleteCart => {
       setCartProduct(prevCart =>
-        prevCart.filter(item => item.CartitemID !== deleteCart._id)
+        prevCart.filter(item => item.CartitemID !== deleteCart._id),
       );
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       let updatedCart = cart.filter(item => item.CartitemID !== deleteCart._id);
@@ -151,12 +153,12 @@ const Cart = () => {
     try {
       if (action === 'single') {
         let response = await api.delete(
-          `Cart/DeleteCart/${id}?action=${action}`
+          `Cart/DeleteCart/${id}?action=${action}`,
         );
         if (response) {
           fetSummery();
           setCartProduct(prevCart =>
-            prevCart.filter(item => item.CartitemID !== id)
+            prevCart.filter(item => item.CartitemID !== id),
           );
           let cart = JSON.parse(localStorage.getItem('cart')) || [];
           let updatedCart = cart.filter(item => item.CartitemID !== id);
@@ -167,7 +169,7 @@ const Cart = () => {
         }
       } else {
         let response = await api.delete(
-          `Cart/DeleteCart/${id}?action=${action}&userid=${userID}`
+          `Cart/DeleteCart/${id}?action=${action}&userid=${userID}`,
         );
         if (response) {
           setCartProduct([]);
@@ -237,7 +239,7 @@ const Cart = () => {
                               }
                               className="bg-red-500 w-[40px] h-[40px] rounded-full flex justify-center items-center text-white cursor-pointer"
                             >
-                              <i class="fa-solid fa-xmark"></i>
+                              <AiOutlineClose />
                             </span>
                             <img
                               className="max-w-[70px] h-auto"
@@ -263,23 +265,23 @@ const Cart = () => {
                                   onClick={() =>
                                     handleIncrement(
                                       'Increment',
-                                      item.CartitemID
+                                      item.CartitemID,
                                     )
                                   }
                                   className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500"
                                 >
-                                  <i class="fa-solid fa-plus-large"></i>
+                                  <FaPlus />
                                 </button>
                                 <button
                                   onClick={() =>
                                     handleIncrement(
                                       'Decrement',
-                                      item.CartitemID
+                                      item.CartitemID,
                                     )
                                   }
                                   className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500"
                                 >
-                                  <i class="fa-solid fa-minus"></i>
+                                  <FaMinus />
                                 </button>
                               </div>
                             </div>
@@ -320,31 +322,31 @@ const Cart = () => {
                                   onClick={() =>
                                     handleIncrement(
                                       'Increment',
-                                      item.CartitemID
+                                      item.CartitemID,
                                     )
                                   }
                                   className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-green-500"
                                 >
-                                  <i class="fa-solid fa-plus-large"></i>
+                                  <FaMinus />
                                 </button>
                                 <button
                                   onClick={() =>
                                     handleIncrement(
                                       'Decrement',
-                                      item.CartitemID
+                                      item.CartitemID,
                                     )
                                   }
                                   className="transition-all ease-in-out duration-300  text-[12px] font-display font-bold text-black bg-white border border-[#e2e2e2] cursor-pointer py-1  flex items-center justify-center px-2.5 hover:text-[#FFF] hover:bg-red-500"
                                 >
-                                  <i class="fa-solid fa-minus"></i>
+                                  <FaMinus />
                                 </button>
                               </div>
-                              <i
+                              <FaMinus
                                 onClick={() =>
                                   clearCart('single', item.CartitemID)
                                 }
-                                class="fa-solid fa-xmark text-[26px] text-black"
-                              ></i>
+                                className="fa-solid fa-xmark text-[26px] text-black"
+                              />
                             </div>
                           </div>
                         </div>
@@ -470,7 +472,7 @@ const Cart = () => {
                   >
                     Continue Shopping
                     <span className="w-5 h-5">
-                      <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                      <FaArrowRight />
                     </span>
                   </a>
                 </div>

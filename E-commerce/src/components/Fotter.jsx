@@ -1,5 +1,11 @@
 import React from 'react';
 import Container from '../Container';
+import { FaFacebookF } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { FaInstagram } from 'react-icons/fa6';
+import { FaLinkedinIn } from 'react-icons/fa';
+import { FaPhoneAlt } from 'react-icons/fa';
+
 
 const Fotter = () => {
   return (
@@ -15,7 +21,7 @@ const Fotter = () => {
 
               <div className="flex items-center gap-4 mb-[10px]">
                 <div className="bg-white flex justify-center items-center w-[50px] h-[50px] rounded-full border border-[#e2e2e2]">
-                  <i class="fa-solid fa-phone-rotary text-[#629D23] text-[24px]"></i>
+                  <FaPhoneAlt className="text-[#629D23] text-[24px]" />
                 </div>
                 <div>
                   <h5 className="text-[16px] font-display font-normal text-[#74787C]">
@@ -190,26 +196,28 @@ const Fotter = () => {
               <div className="text-[16px] font-normal text-[#6E777D] font-display">
                 Follow Us:
               </div>
+
               <div className="flex items-center gap-5 ">
                 {[
-                  { icon: 'fa-facebook-f', link: 'https://facebook.com' },
-                  { icon: 'fa-x-twitter', link: 'https://twitter.com' },
-                  { icon: 'fa-instagram', link: 'https://instagram.com' },
-                  { icon: 'fa-linkedin-in', link: 'https://linkedin.com' },
-                ].map((item, index) => (
-                  <a
-                    key={index}
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative group w-12 h-12 flex items-center justify-center text-2xl cursor-pointer "
-                  >
-                    <span className="absolute inset-0 bg-[#629D23] rounded-full scale-0 transition-transform duration-300 group-hover:scale-100  z-0"></span>
-                    <i
-                      className={`fa-brands ${item.icon} text-[#000] group-hover:text-white transition-all ease-in-out duration-300 z-10`}
-                    ></i>
-                  </a>
-                ))}
+                  { icon: FaFacebookF, link: 'https://facebook.com' },
+                  { icon: FaXTwitter, link: 'https://twitter.com' },
+                  { icon: FaInstagram, link: 'https://instagram.com' },
+                  { icon: FaLinkedinIn, link: 'https://linkedin.com' },
+                ].map((item, index) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative group w-12 h-12 flex items-center justify-center text-2xl cursor-pointer "
+                    >
+                      <span className="absolute inset-0 bg-[#629D23] rounded-full scale-0 transition-transform duration-300 group-hover:scale-100  z-0"></span>
+                      <IconComponent className="text-[#000] group-hover:text-white transition-all ease-in-out duration-300 z-10" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
             <div>

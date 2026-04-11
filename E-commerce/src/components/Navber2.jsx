@@ -2,6 +2,9 @@ import React from 'react';
 import Container from '../Container';
 import Page1 from './Page1';
 import { Link } from 'react-router-dom';
+import { FaChevronDown } from 'react-icons/fa';
+import { LuApple } from 'react-icons/lu';
+
 
 const Navber2 = () => {
   return (
@@ -10,10 +13,10 @@ const Navber2 = () => {
         <Container>
           <div className="flex items-center justify-between">
             <div className="relative laptop:w-[180px] computer:w-[280px] inline-block group">
-              <button className="computer:text-[20px] laptop:text-[18px] group-hover:bg-black transition-all ease-in-out duration-300 font-display font-semibold text-[#fff] bg-[#629D23] computer:py-[22px] laptop:py-[16px] computer:px-[25px] laptop:px-0 w-full cursor-pointer">
+              <button className="computer:text-[20px] laptop:text-[18px] group-hover:bg-black transition-all ease-in-out duration-300 font-display font-semibold text-[#fff] bg-[#629D23] computer:py-[22px] laptop:py-[16px] computer:px-[25px] laptop:px-0 w-full cursor-pointer flex items-center">
                 All Categories
                 <span className="computer:ml-[80px] laptop:ml-0 ">
-                  <i class="fa-light fa-chevrons-down"></i>
+                  <FaChevronDown size={24} className='text-white group-hover:rotate-180 transition-all ease-in-out duration-300' />
                 </span>
               </button>
               <div
@@ -23,21 +26,21 @@ const Navber2 = () => {
                group-hover:opacity-100 group-hover:visible group-hover:translate-y-[74px] border-x-2 border-[#629D23] border-b-2 rounded-b-lg"
               >
                 <ul className="">
-                  <li className=" text-[18px] font-display font-semibold hover:w-full hover:bg-[#629D23] text-amber-700 px-6 py-3 cursor-pointer transition-all ease-in-out duration-300 hover:text-white">
+                  <li className=" text-[18px] font-display font-semibold hover:w-full hover:bg-[#629D23] text-amber-700 px-6 py-3 cursor-pointer transition-all ease-in-out duration-300 hover:text-white flex items-center">
                     <span className="mr-[25px]">
-                      <i class="fa-thin fa-apple-whole"></i>
+                      <LuApple size={24} />
                     </span>
                     Breakfast & Dairy
                   </li>
-                  <li className=" text-[18px] font-display font-semibold hover:w-full hover:bg-[#629D23] text-amber-700 px-6 py-3 cursor-pointer transition-all ease-in-out duration-300 hover:text-white">
+                  <li className=" text-[18px] font-display font-semibold hover:w-full hover:bg-[#629D23] text-amber-700 px-6 py-3 cursor-pointer transition-all ease-in-out duration-300 hover:text-white flex items-center">
                     <span className="mr-[25px]">
-                      <i class="fa-thin fa-apple-whole"></i>
+                      <LuApple size={24} />
                     </span>
                     Breakfast & Dairy
                   </li>
-                  <li className=" text-[18px] font-display font-semibold hover:w-full hover:bg-[#629D23] text-amber-700 px-6 py-3 cursor-pointer transition-all ease-in-out duration-300 hover:text-white">
+                  <li className=" text-[18px] font-display font-semibold hover:w-full hover:bg-[#629D23] text-amber-700 px-6 py-3 cursor-pointer transition-all ease-in-out duration-300 hover:text-white flex items-center">
                     <span className="mr-[25px]">
-                      <i class="fa-thin fa-apple-whole"></i>
+                      <LuApple size={24} />
                     </span>
                     Breakfast & Dairy
                   </li>

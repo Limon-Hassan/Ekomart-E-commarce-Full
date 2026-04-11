@@ -1,3 +1,4 @@
+import { MdKeyboardArrowRight } from 'react-icons/md';
 import Container from '../Container';
 import Page2 from './Page2';
 
@@ -18,10 +19,10 @@ const Page1 = () => {
                 Don't miss these opportunities...
               </p>
               <div className="flex items-center justify-between">
-                <button className="mobile:text-[12px] tablet:text-[18px] laptop:text-[18px] computer:text-[18px] font-display font-bold text-[#FFF] bg-[#629D23] py-[12px] px-[24px] rounded-[8px] cursor-pointer hover:bg-[#22351E] ease-in-out duration-300">
+                <button className="mobile:text-[12px] tablet:text-[18px] laptop:text-[18px] computer:text-[18px] font-display font-bold text-[#FFF] bg-[#629D23] py-[12px] px-[24px] rounded-[8px] cursor-pointer hover:bg-[#22351E] ease-in-out duration-300 flex items-center">
                   Shop Now
                   <span className="ml-[12px]">
-                    <i class="fa-regular fa-arrow-right"></i>
+                    <MdKeyboardArrowRight size={28} />
                   </span>
                 </button>
                 <div className="mobile:block tablet:block laptop:hidden computer:hidden">

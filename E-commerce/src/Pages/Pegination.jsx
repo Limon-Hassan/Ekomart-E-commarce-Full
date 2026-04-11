@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa6';
+import { FaArrowRight } from 'react-icons/fa6';
 
 const Pegination = ({ active, setActive, totalPages }) => {
   const next = () => {
@@ -23,7 +25,7 @@ const Pegination = ({ active, setActive, totalPages }) => {
           }`}
         >
           <span>
-            <i class="fa-solid fa-arrow-left"></i>
+            <FaArrowLeft size={20} />
           </span>
           Previous
         </button>
@@ -55,7 +57,7 @@ const Pegination = ({ active, setActive, totalPages }) => {
         >
           Next
           <span>
-            <i class="fa-solid fa-arrow-right"></i>
+            <FaArrowRight size={20}/>
           </span>
         </button>
       </div>
