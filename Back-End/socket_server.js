@@ -6,7 +6,7 @@ function init(server) {
     cors: {
       origin: [
         'http://localhost:5173',
-        'https://ekomart-e-commarce.mahammudhassanlimon.workers.dev',
+        'https://ekomart-e-commarce.withlimon.workers.dev',
         'https://evato-e-commerce.onrender.com',
       ],
       methods: ['GET', 'POST'],

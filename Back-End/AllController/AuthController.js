@@ -172,7 +172,7 @@ async function googleLogin(req, res, next) {
     });
 
     res.redirect(
-      'https://ekomart-e-commarce.mahammudhassanlimon.workers.dev/google/success',
+      'https://ekomart-e-commarce.withlimon.workers.dev/google/success',
     );
   } catch (err) {
     next(err);
