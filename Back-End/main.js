@@ -18,11 +18,11 @@ app.use(
   cors({
     origin: [
       'http://localhost:5173',
-      'https://evato-e-commerce-limon.onrender.com',
+      'https://ekomart-e-commarce.mahammudhassanlimon.workers.dev',
       'https://evato-e-commerce.onrender.com',
     ],
     credentials: true,
-  })
+  }),
 );
 
 let server = http.createServer(app);
