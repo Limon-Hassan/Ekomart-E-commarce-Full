@@ -1,7 +1,7 @@
 # 🍔 Evato E-Commerce (Food Selling Platform)
 
 ## 🚀 Live Demo
-https://developwithlimon.pages.dev/
+https://ekomart-e-commarce.withlimon.workers.dev/
 
 ---
 
