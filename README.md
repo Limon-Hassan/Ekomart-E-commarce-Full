@@ -27,6 +27,7 @@ Evato is a full-stack food e-commerce web application where users can browse pro
 
 ### ⚡ Advanced Features
 - Real-time updates using Socket.io
+- Smooth Search filter for products
 - Global state management with Redux
 - Clean and scalable architecture
 
