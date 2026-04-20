@@ -19,6 +19,7 @@ app.use(
     origin: [
       'http://localhost:5173',
       'https://ekomart-e-commarce.withlimon.workers.dev',
+      "https://ekomart-e-commarce-full.vercel.app",
       'https://evato-e-commerce.onrender.com',
     ],
     credentials: true,
@@ -31,20 +32,20 @@ io.on('connection', socket => {
   console.log('✅ User connected:', socket.id);
   socket.on('joinUser', ({ userId }) => {
     socket.join(userId);
-    console.log(`👤 User ${userId} joined their private room`);
+    console.log(`User ${userId} joined their private room`);
   });
 
   socket.on('joinProduct', ({ productId }) => {
     socket.join(productId);
-    console.log(`👤 User joined product room ${productId}`);
+    console.log(`User joined product room ${productId}`);
   });
 
   socket.on('joinAdmin', ({ adminId }) => {
     socket.join('adminRoom');
-    console.log(`👑 Admin ${adminId} joined adminRoom`);
+    console.log(`Admin ${adminId} joined adminRoom`);
   });
   socket.on('disconnect', () => {
-    console.log('❌ User disconnected:', socket.id);
+    console.log('User disconnected:', socket.id);
   });
 
   socket.on('searchProducts', async ({ query, userId }) => {

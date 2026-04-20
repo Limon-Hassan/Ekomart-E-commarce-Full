@@ -7,6 +7,7 @@ function init(server) {
       origin: [
         'http://localhost:5173',
         'https://ekomart-e-commarce.withlimon.workers.dev',
+        'https://ekomart-e-commarce-full.vercel.app',
         'https://evato-e-commerce.onrender.com',
       ],
       methods: ['GET', 'POST'],
